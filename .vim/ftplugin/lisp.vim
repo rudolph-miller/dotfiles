@@ -25,5 +25,5 @@ let g:slimv_swank_cmd = '!osascript ~/.swank/start-swank.scpt'
 let g:slimv_clhs_root = 'file://$HOME/dev/HyperSpec/Body/'
 
 map ,w ,c<CR>
-map ,q ;!osascript ~/.swank/stop-swank.scpt<CR>
+map ,q ;!osascript ~/.swank/stop-swank.scpt<CR><CR>
 map ,a ,q,w
