@@ -51,6 +51,8 @@
 (define-key evil-normal-state-map ")" 'paredit-forward-up)
 (define-key evil-normal-state-map "(" 'paredit-backward-up)
 
+;; clone slime in .emacs.d/
+;; `git clone https://github.com/slime/slime`
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/slime/"))
 (require 'auto-install)
 (require 'slime)
