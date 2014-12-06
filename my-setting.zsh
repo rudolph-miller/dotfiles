@@ -1,4 +1,5 @@
 export GREP_COLOR='1;37;41'
+export CC='/usr/local/bin/gcc-4.9'
 alias grep='grep -E --color=auto'
 
 PATH=$PATH:/sw/bin:/opt/local/bin:/opt/elastic-mapreduce-ruby:/opt/hadoop/bin:/Users/tomoya/git-lab/pm2/bin:$HOME/.nodebrew/current/bin
@@ -12,8 +13,16 @@ alias llg="ls -lG"
 alias hs="hadoop jar /opt/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.4.0.jar"
 alias sakura="ssh -i ~/.ssh/sakura.pem 219.94.255.55"
 alias ghost="ssh -i ~/.ssh/sakura.pem ghost@219.94.255.55"
-alias ey="/Users/tomoya/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/engineyard-3.0.0/bin/ey"
+alias ey="/Users/tomoya/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/engineyard-3.0.1/bin/ey"
 alias tr="/Users/tomoya/.rbenv/versions/2.0.0-p451/bin/trello"
+alias ghi="TERM=xterm-256color ghi"
+alias search="w3m -cookie https://www.google.co.jp/search"
+alias em="emacs"
+
+function search ()
+{
+  w3m -cookie https://www.google.co.jp/search?q=$1
+}
 
 autoload -U compinit
 compinit
@@ -47,3 +56,8 @@ setopt auto_cd
 function chpwd() { ls }
 eval "$(hub alias -s)"
 export NODE_PATH=/usr/local/lib/node_modules
+
+# RVM
+[ -s ${HOME}/.rvm/scripts/rvm ] && source ${HOME}/.rvm/scripts/rvm
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="/Users/tomoya/.cask/bin:$PATH"

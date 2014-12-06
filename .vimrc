@@ -70,6 +70,7 @@ autocmd FileType go setlocal sw=2 sts=2 ts=2 et
 
 "Markdown
 au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile GHI_ISSUE set filetype=markdown
 
 "HTML
 au BufRead,BufNewFile *.html set filetype=html
@@ -131,8 +132,8 @@ nnoremap <F3> :TlistToggle<CR>
 let Tlist_Use_Right_Window = 1
 let Tlist_WinWidth = 50
 
-noremap ; :
-noremap : ;
+" noremap ; :
+" noremap : ;
 inoremap <C-k> <ESC>
 
 set nocompatible
