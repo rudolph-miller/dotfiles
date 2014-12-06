@@ -1,0 +1,3 @@
+[submodule "swank"]
+	path = swank
+	url = https://github.com/Rudolph-Miller/swank
