@@ -1,1 +1,1 @@
-map <C-m> ;PrevimOpen<CR>
+map <C-m> :PrevimOpen<CR>

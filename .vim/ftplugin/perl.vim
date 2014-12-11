@@ -1,1 +1,1 @@
-map <C-n> ;!perl %<CR>
+map <C-n> :!perl %<CR>

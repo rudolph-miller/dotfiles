@@ -1,1 +1,1 @@
-map <C-n> ;!python %<CR>
+map <C-n> :!python %<CR>

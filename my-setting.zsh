@@ -2,9 +2,6 @@ export GREP_COLOR='1;37;41'
 export CC='/usr/local/bin/gcc-4.9'
 alias grep='grep -E --color=auto'
 
-PATH=$PATH:/sw/bin:/opt/local/bin:/opt/elastic-mapreduce-ruby:/opt/hadoop/bin:/Users/tomoya/git-lab/pm2/bin:$HOME/.nodebrew/current/bin
-export PATH
-
 eval "$(rbenv init -)"
 
 alias ll='ls -l'
@@ -55,9 +52,3 @@ SPROMPT="%{$fg[red]%}%{$suggest%}(●ↀωↀ●)✧? < %B%r%b %{$fg[red]%}に�
 setopt auto_cd
 function chpwd() { ls }
 eval "$(hub alias -s)"
-export NODE_PATH=/usr/local/lib/node_modules
-
-# RVM
-[ -s ${HOME}/.rvm/scripts/rvm ] && source ${HOME}/.rvm/scripts/rvm
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH="/Users/tomoya/.cask/bin:$PATH"

@@ -76,4 +76,11 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# RVM
+[ -s ${HOME}/.rvm/scripts/rvm ] && source ${HOME}/.rvm/scripts/rvm
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH=$PATH:/sw/bin:/opt/local/bin:/opt/elastic-mapreduce-ruby:/opt/hadoop/bin:/Users/tomoya/git-lab/pm2/bin:$HOME/.nodebrew/current/bin
+
+export PATH="/Users/tomoya/.cask/bin:$PATH"
+
+export NODE_PATH=/usr/local/lib/node_modules

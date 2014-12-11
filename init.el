@@ -6,6 +6,8 @@
 
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
+(global-linum-mode t)
+(setq linum-format "%d ")
 
 ;; emacs directory
 (when load-file-name
@@ -37,7 +39,7 @@
 ;; enable evil
 (require 'evil)
 (evil-mode 1)
-(setq evil-shift-width 1)
+(setq evil-shift-width 2)
 
 (require 'color-theme)
 
@@ -54,10 +56,14 @@
 ;; clone slime in .emacs.d/
 ;; `git clone https://github.com/slime/slime`
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/slime/"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/slime-repl-ansi-color/"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/cl-annot/misc/"))
 (require 'auto-install)
 (require 'slime)
-(setq inferior-lisp-program "ros run -Q")
-(slime-setup '(slime-repl slime-fancy slime-banner))
+(require 'slime-repl-ansi-color)
+(require 'slime-annot)
+(setq inferior-lisp-program "ros run -Q -l ~/.rosrc -s")
+(slime-setup '(slime-repl slime-fancy slime-banner slime-repl-ansi-color))
 (setq common-lisp-hyperspec-root
       (concat "file://" (expand-file-name "~/dev//HyperSpec/"))
       common-lisp-hyperspec-symbol-table
@@ -110,5 +116,13 @@
 (add-to-list 'auto-mode-alist
 	     '("\\.tmpl\\'" . html-mode))
 
-(autoload 'js2-mode "js2" nil t)
+(require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
+;; emmet-mode
+(require 'emmet-mode)
+(add-hook 'sgml-mode-hook 'emmet-mode) ;; マークアップ言語全部で使う
+(add-hook 'css-mode-hook  'emmet-mode) ;; CSSにも使う
+(add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2))) ;; indent はスペース2個
+(eval-after-load "emmet-mode" '(define-key emmet-mode-keymap (kbd "C-j") nil)) ;; C-j は newline のままにしておく
+(define-key emmet-mode-keymap (kbd "C-i") 'emmet-expand-line) ;; C-i で展開

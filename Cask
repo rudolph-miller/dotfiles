@@ -34,6 +34,7 @@
 
 ;; slime
 (depends-on "slime" :git "https://github.com/slime/slime")
+(depends-on "slime-repl-ansi-color" :git "https://github.com/deadtrickster/slime-repl-ansi-color")
 
 ;; ac-slime
 (depends-on "auto-complete")
@@ -56,5 +57,8 @@
 ;; js2-mode
 (depends-on "js2-mode" :git "https://github.com/mooz/js2-mode")
 
-;;paredit
+;; paredit
 (depends-on "paredit")
+
+;; Emmet-mode
+(depends-on "emmet-mode")
