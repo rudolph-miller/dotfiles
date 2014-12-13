@@ -6,8 +6,6 @@
 
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
-(global-linum-mode t)
-(setq linum-format "%d ")
 
 ;; emacs directory
 (when load-file-name
