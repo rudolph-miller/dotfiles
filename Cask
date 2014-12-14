@@ -62,3 +62,9 @@
 
 ;; Emmet-mode
 (depends-on "emmet-mode")
+
+;; Anything
+(depends-on "anything")
+
+;; Smartparens
+(depends-on "smartparens")

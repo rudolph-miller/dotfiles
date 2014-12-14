@@ -6,6 +6,24 @@
 
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
+(prefer-coding-system 'utf-8)
+(setq coding-system-for-read 'utf-8)
+(setq coding-system-for-write 'utf-8)
+(set-language-environment "Japanese")
+(iswitchb-mode 1)
+(add-hook 'iswitchb-define-mode-map-hook
+          (lambda ()
+            (define-key iswitchb-mode-map "\C-n" 'iswitchb-next-match)
+            (define-key iswitchb-mode-map "\C-p" 'iswitchb-prev-match)))
+
+;; Anythin
+(require 'anything)
+(define-key anything-map "\C-n" 'anything-next-line)
+(define-key anything-map "\C-p" 'anything-previous-line)
+(global-set-key "\C-xi" 'anything)
+(require 'anything-config)
+(setq anything-sources
+      (list anything-c-source-buffers))
 
 ;; emacs directory
 (when load-file-name
@@ -19,9 +37,9 @@
 ;; package management
 (require 'package)
 (add-to-list 'package-archives
-	     '("marmalade" . "http://marmalade-repo.org/packages/"))
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives
-	     '("melpa-stable" . "http://stable.melpa.org/packages/"))
+             '("melpa-stable" . "http://stable.melpa.org/packages/"))
 (package-initialize)
 
 (defun package-install-with-refresh (package)
@@ -42,14 +60,15 @@
 (require 'color-theme)
 
 (global-set-key "\C-h" 'backward-delete-char)
+(define-key key-translation-map [?\C-h] [?\C-?])
 
 (define-key evil-insert-state-map (kbd "C-e") 'move-end-of-line)
 (define-key evil-normal-state-map (kbd "C-e") 'move-end-of-line)
 (define-key evil-insert-state-map (kbd "C-k") 'previous-line)
 (define-key evil-insert-state-map (kbd "C-j") 'next-line)
 
-(define-key evil-normal-state-map ")" 'paredit-forward-up)
-(define-key evil-normal-state-map "(" 'paredit-backward-up)
+(define-key evil-normal-state-map ")" 'sp-up-sexp)
+(define-key evil-normal-state-map "(" 'sp-down-sexp)
 
 ;; clone slime in .emacs.d/
 ;; `git clone https://github.com/slime/slime`
@@ -101,10 +120,14 @@
 (add-hook 'slime-mode-hook 'set-up-slime-ac)
 (add-hook 'lisp-mode-hook 'set-up-slime-ac)
 (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
-(require 'paredit)
-(add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
-(add-hook 'lisp-mode-hook 'enable-paredit-mode)
-(add-hook 'lisp-interacton-mode-hook 'enable-paredit-mode)
+(require 'smartparens)
+(require 'smartparens-config)
+(defun enable-smartparens-mode ()
+  (unless smartparens-mode
+    (smartparens-mode)))
+(add-hook 'slime-mode-hook #'enable-smartparens-mode)
+(add-hook 'lisp-mode-hook #'enable-smartparens-mode)
+(add-hook 'emacs-lisp-mode-hook #'enable-smartparens-mode)
 
 (require 'w3m)
 (setq browse-url-browser-function 'w3m-browse-url)
@@ -112,7 +135,7 @@
 (require 'magit)
 
 (add-to-list 'auto-mode-alist
-	     '("\\.tmpl\\'" . html-mode))
+             '("\\.tmpl\\'" . html-mode))
 
 (require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
