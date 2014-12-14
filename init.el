@@ -2,6 +2,11 @@
 (cask-initialize)
 
 (custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(helm-selection ((t (:underline "cyan"))))
  '(minibuffer-prompt ((t (:foreground "cyan")))))
 
 (setq-default indent-tabs-mode nil)
@@ -16,14 +21,12 @@
             (define-key iswitchb-mode-map "\C-n" 'iswitchb-next-match)
             (define-key iswitchb-mode-map "\C-p" 'iswitchb-prev-match)))
 
-;; Anythin
-(require 'anything)
-(define-key anything-map "\C-n" 'anything-next-line)
-(define-key anything-map "\C-p" 'anything-previous-line)
-(global-set-key "\C-xi" 'anything)
-(require 'anything-config)
-(setq anything-sources
-      (list anything-c-source-buffers))
+;; Helm
+(require 'helm-config)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+(global-set-key (kbd "C-q") 'helm-mini)
 
 ;; emacs directory
 (when load-file-name
@@ -115,11 +118,6 @@
 ;; Connections
 (push '(slime-connection-list-mode) popwin:special-display-config)
 
-;; ac-slime
-(require 'ac-slime)
-(add-hook 'slime-mode-hook 'set-up-slime-ac)
-(add-hook 'lisp-mode-hook 'set-up-slime-ac)
-(add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
 (require 'smartparens)
 (require 'smartparens-config)
 (defun enable-smartparens-mode ()
@@ -147,3 +145,9 @@
 (add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2))) ;; indent はスペース2個
 (eval-after-load "emmet-mode" '(define-key emmet-mode-keymap (kbd "C-j") nil)) ;; C-j は newline のままにしておく
 (define-key emmet-mode-keymap (kbd "C-i") 'emmet-expand-line) ;; C-i で展開
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
