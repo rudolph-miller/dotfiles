@@ -20,6 +20,7 @@
           (lambda ()
             (define-key iswitchb-mode-map "\C-n" 'iswitchb-next-match)
             (define-key iswitchb-mode-map "\C-p" 'iswitchb-prev-match)))
+(global-auto-revert-mode 1)
 
 ;; Helm
 (require 'helm-config)
@@ -137,6 +138,23 @@
 
 (require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(add-hook 'js2-mode-hook
+          #'(lambda ()
+              (require 'espresso)
+              (setq espresso-indent-level 2
+                    espresso-expr-indent-offset 2
+                    indent-tabs-mode nil)
+              (defun my-js-indent-line ()
+                (interactive)
+                (let* ((parse-status (save-excursion (syntax-ppss (point-at-bol))))
+                       (offset (- (current-column) (current-indentation)))
+                       (indentation (espresso--proper-indentation parse-status)))
+                  (back-to-indentation)
+                  (if (looking-at "case\\s-")
+                    (indent-line-to (+ indentation 2))
+                    (espresso-indent-line))
+                  (when (> offset 0) (forward-char offset))))
+              (set (make-local-variable 'indent-line-function) 'my-js-indent-line)))
 
 ;; emmet-mode
 (require 'emmet-mode)
@@ -145,9 +163,30 @@
 (add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2))) ;; indent はスペース2個
 (eval-after-load "emmet-mode" '(define-key emmet-mode-keymap (kbd "C-j") nil)) ;; C-j は newline のままにしておく
 (define-key emmet-mode-keymap (kbd "C-i") 'emmet-expand-line) ;; C-i で展開
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+
+;; undo-tree
+(require 'undo-tree)
+(global-undo-tree-mode t)
+(global-set-key (kbd "M-/") 'undo-tree-redo)
+
+;; undohist
+(require 'undohist)
+(undohist-initialize)
+
+;; scss-mode
+(require 'scss-mode)
+(add-to-list 'auto-mode-alist '("\\.scss$" . scss-mode))
+(defun scss-custom ()
+  "scss-mode-hook"
+  (and
+    (set (make-local-variable 'css-indent-offset) 2)
+    (set (make-local-variable 'scss-compile-at-save) nil)))
+(add-hook 'scss-mode-hook
+          '(lambda () (scss-custom)))
+
+;; Erlang
+(add-to-list 'load-path (expand-file-name "/usr/local/lib/erlang/lib/tools-2.7/emacs/"))
+(setq erlang-root-dir "/usr/local/lib/erlang")
+(add-to-list 'exec-path (expand-file-name "/usr/local/lib/erlang/bin"))
+(require 'erlang-start)
+(push '("*erlang*") popwin:special-display-config)

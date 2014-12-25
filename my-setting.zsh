@@ -15,6 +15,7 @@ alias tr="/Users/tomoya/.rbenv/versions/2.0.0-p451/bin/trello"
 alias ghi="TERM=xterm-256color ghi"
 alias search="w3m -cookie https://www.google.co.jp/search"
 alias em="emacs"
+alias node-sass="~/dev/node/node-sass/bin/node-sass"
 
 function search ()
 {

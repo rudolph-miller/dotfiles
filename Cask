@@ -34,7 +34,6 @@
 
 ;; slime
 (depends-on "slime" :git "https://github.com/slime/slime")
-(depends-on "slime-repl-ansi-color" :git "https://github.com/deadtrickster/slime-repl-ansi-color")
 
 ;; popwin
 (depends-on "popwin" :git "https://github.com/m2ym/popwin-el")
@@ -65,3 +64,12 @@
 ;; Helm
 (depends-on "emacs-async" :git "https://github.com/jwiegley/emacs-async.git")
 (depends-on "helm" :git "https://github.com/emacs-helm/helm.git")
+
+;; undo-tree
+(depends-on "undo-tree")
+
+;; undohist
+(depends-on "undohist")
+
+;; scss
+(depends-on "scss-mode")
