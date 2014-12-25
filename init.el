@@ -188,6 +188,6 @@
 (add-to-list 'load-path (expand-file-name "/usr/local/lib/erlang/lib/tools-2.7/emacs/"))
 (setq erlang-root-dir "/usr/local/lib/erlang")
 (add-to-list 'exec-path (expand-file-name "/usr/local/lib/erlang/bin"))
-(setq erlang-electric-commands '(erlang-electric-newline erlang-electric-gt))
+(setq erlang-electric-commands '(erlang-electric-newline erlang-electric-gt erlang-electric-semecolon))
 (require 'erlang-start)
 (push '("*erlang*") popwin:special-display-config)
