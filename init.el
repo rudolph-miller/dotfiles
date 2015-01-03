@@ -2,12 +2,12 @@
 (cask-initialize)
 
 (custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(helm-selection ((t (:underline "cyan"))))
- '(minibuffer-prompt ((t (:foreground "cyan")))))
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+  '(helm-selection ((t (:underline "cyan"))))
+  '(minibuffer-prompt ((t (:foreground "cyan")))))
 
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
@@ -191,3 +191,12 @@
 (setq erlang-electric-commands '(erlang-electric-newline erlang-electric-gt erlang-electric-semecolon))
 (require 'erlang-start)
 (push '("*erlang*") popwin:special-display-config)
+
+;; jsx
+(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+(defadvice web-mode-highlight-part (around tweak-jsx activate)
+           (if (equal web-mode-content-type "jsx")
+             (let ((web-mode-enable-part-face nil))
+               ad-do-it)
+             ad-do-it))
+;(add-to-list 'auto-mode-alist '("\\.jsx$" . jsx-mode))

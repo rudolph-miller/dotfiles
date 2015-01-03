@@ -73,3 +73,6 @@
 
 ;; scss
 (depends-on "scss-mode")
+
+;; jsx
+(depends-on "jsx-mode")
