@@ -1,5 +1,5 @@
-map <C-n> :!sbcl --script %<CR>
-map <C-b> :!sbcl --load %<CR>
+map <C-n> :!ros %<CR>
+map <C-m> :!ros %<CR>
 
 " let g:paredit_mode=0
 let g:slimv_repl_split = 4
