@@ -38,9 +38,6 @@
 ;; popwin
 (depends-on "popwin" :git "https://github.com/m2ym/popwin-el")
 
-;; w3m
-(depends-on "w3m")
-
 ;; git
 (depends-on "git-commit-mode")
 (depends-on "git-rebase-mode")
@@ -63,7 +60,7 @@
 
 ;; Helm
 (depends-on "emacs-async" :git "https://github.com/jwiegley/emacs-async.git")
-(depends-on "helm" :git "https://github.com/emacs-helm/helm.git")
+(depends-on "helm")
 
 ;; undo-tree
 (depends-on "undo-tree")
@@ -76,3 +73,15 @@
 
 ;; jsx
 (depends-on "jsx-mode")
+
+;; Yaml
+(depends-on "yaml-mode")
+
+;; js-comint
+(depends-on "js-comint" :git "https://github.com/redguardtoo/js-comint")
+
+;; node-console
+(depends-on "node-console" :git "https://github.com/yuutayamada/node-console")
+
+;; quickrun
+(depends-on "quickrun")
