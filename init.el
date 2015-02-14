@@ -24,8 +24,8 @@
 
 (require 'flycheck)
 (eval-after-load 'flycheck
-                   '(custom-set-variables
-                         '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
+  '(custom-set-variables
+    '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
 
 ;; Helm
 (require 'helm-config)
@@ -37,11 +37,6 @@
 ;; emacs directory
 (when load-file-name
   (setq user-emacs-directory (file-name-directory load-file-name)))
-
-;; auto-install
-;(add-to-list 'load-path (expand-file-name "~/.emacs.d/auto-install/"))
-;(require 'auto-install)
-;(auto-install-compatibility-setup)
 
 ;; package management
 (require 'package)
@@ -91,14 +86,14 @@
                                                                               (match-end ,n)
                                                                               ,glyph)))))))))))
 
-;(set-pretty-patterns
-; '((?λ ("\\<lambda\\>" lisp lisp-interaction emacs-lisp scheme))
-;   (?λ ("\\<function\\>" js2))))
+;;(set-pretty-patterns
+;; '((?λ ("\\<lambda\\>" lisp lisp-interaction emacs-lisp scheme))
+;;   (?λ ("\\<function\\>" js2))))
 
-;(add-hook 'slime-mode-hook
-;          (lambda ()
-;            (load-library "cl-indent")
-;            (setq lisp-indent-function 'common-lisp-indent-function)))
+;;(add-hook 'slime-mode-hook
+;;          (lambda ()
+;;            (load-library "cl-indent")
+;;            (setq lisp-indent-function 'common-lisp-indent-function)))
 
 ;; clone slime in .emacs.d/
 ;; `git clone https://github.com/slime/slime`
@@ -227,12 +222,12 @@
 
 (flycheck-def-executable-var 'jsxhint-checker "jsxhint")
 (flycheck-define-command-checker 'jsxhint-checker
-                         "A JSX syntax and style checker based on JSXHint.
+  "A JSX syntax and style checker based on JSXHint.
                           You must insatll jsxhint with `npm insatll -g jsxhint` first"
 
-                         :command `("jsxhint" "--config" ,(expand-file-name "~/.emacs.d/.jshintrc") source)
-                         :error-patterns '((error line-start (1+ nonl) ": line " line ", col " column ", " (message) line-end))
-                         :modes '(web-mode))
+  :command `("jsxhint" "--config" ,(expand-file-name "~/.emacs.d/.jshintrc") source)
+  :error-patterns '((error line-start (1+ nonl) ": line " line ", col " column ", " (message) line-end))
+  :modes '(web-mode))
 
 (add-hook 'web-mode-hook
           (lambda ()
@@ -269,7 +264,7 @@
 ;; js-comint
 (require 'js-comint)
 (setq inferior-js-program-command "node --interactive")
-;(push '("*js*") popwin:special-display-config)
+;;(push '("*js*") popwin:special-display-config)
 (add-hook 'js2-mode-hook '(lambda () 
                             (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix)
                             (local-set-key "\C-x\C-e" 'js-send-last-sexp)
@@ -281,8 +276,8 @@
 
 (require 'node-console)
 (eval-after-load "js2-mode"
-                 '(progn
-                    (define-key js2-mode-map (kbd "C-c C-c") 'node-console)))
+  '(progn
+     (define-key js2-mode-map (kbd "C-c C-c") 'node-console)))
 
 ;; quickrun
 (require 'quickrun)
