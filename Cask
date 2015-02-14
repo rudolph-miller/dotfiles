@@ -85,3 +85,6 @@
 
 ;; quickrun
 (depends-on "quickrun")
+
+;; flycheck-pos-tip
+(depends-on "flycheck-pos-tip")
