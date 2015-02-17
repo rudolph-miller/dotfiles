@@ -23,6 +23,7 @@
 (global-auto-revert-mode 1)
 
 (require 'flycheck)
+(add-hook 'after-init-hook #'global-flycheck-mode)
 (eval-after-load 'flycheck
   '(custom-set-variables
     '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
@@ -223,7 +224,7 @@
 (flycheck-def-executable-var 'jsxhint-checker "jsxhint")
 (flycheck-define-command-checker 'jsxhint-checker
   "A JSX syntax and style checker based on JSXHint.
-                          You must insatll jsxhint with `npm insatll -g jsxhint` first"
+   You must insatll jsxhint with `npm insatll -g jsxhint` first"
 
   :command `("jsxhint" "--config" ,(expand-file-name "~/.emacs.d/.jshintrc") source)
   :error-patterns '((error line-start (1+ nonl) ": line " line ", col " column ", " (message) line-end))
