@@ -11,6 +11,19 @@ ln -sf ~/dotfiles/mytheme.zsh-theme ~/.oh-my-zsh/themes/mytheme.zsh-theme
 ln -sf ~/dotfiles/.rosrc ~/.rosrc
 ln -sf ~/dotfiles/gitignore ~/.gitignore
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
+mkdir -p ~/.emacs.d
 git clone http://github.com/cask/cask ~/.emacs.d/cask
 cp ~/.emacs.d/cask/cask.el ~/.emacs.d/
 git clone http://github.com/slime/slime ~/.emacs.d/slime
+brew tap snmsts/roswell
+brew install roswell
+roswell setup
+roswell install sbcl
+mkdir -p ~/.vim/neobundle
+git clone https://github.com/Shougo/neobundle.vim ~/.vim/neobundle/neobundle.vim
+git clone https://github.com/m2ym/popwin-el ~/.emacs.d/popwin
+cp ~/.emacs.d/popwin/popwin.el ~/.emacs.d/
+git clone https://github.com/m2ym/cl-annot ~/.emacs.d/cl-annot
+cp ~/.emacs.d/cl-annot/misc/slime-annot.el ~/.emacs.d/
+git clone https://github.com/deadtrickster/slime-repl-ansi-color
+cp ~/.emacs.d/slime-repl-ansi-color/slime-repl-ansi-color.el ~/.emacs.d/
