@@ -79,8 +79,9 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # RVM
 [ -s ${HOME}/.rvm/scripts/rvm ] && source ${HOME}/.rvm/scripts/rvm
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH=$PATH:/sw/bin:/opt/local/bin:/opt/elastic-mapreduce-ruby:/opt/hadoop/bin:/Users/tomoya/git-lab/pm2/bin:$HOME/.nodebrew/current/bin
+export PATH=$PATH:/sw/bin:$HOME/.nodebrew/current/bin
 
-export PATH="/Users/tomoya/.cask/bin:$PATH"
+export PATH=$PATH:$HOME/.cask/bin
 
 export NODE_PATH=/usr/local/lib/node_modules
+export GOPATH="/usr/local/go/"

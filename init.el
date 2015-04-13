@@ -186,15 +186,6 @@
 (eval-after-load "emmet-mode" '(define-key emmet-mode-keymap (kbd "C-j") nil)) ;; C-j は newline のままにしておく
 (define-key emmet-mode-keymap (kbd "C-i") 'emmet-expand-line) ;; C-i で展開
 
-;; undo-tree
-(require 'undo-tree)
-(global-undo-tree-mode t)
-(global-set-key (kbd "M-/") 'undo-tree-redo)
-
-;; undohist
-(require 'undohist)
-(undohist-initialize)
-
 ;; scss-mode
 (require 'scss-mode)
 (add-to-list 'auto-mode-alist '("\\.scss$" . scss-mode))
@@ -206,12 +197,12 @@
           '(lambda () (scss-custom)))
 
 ;; Erlang
-(add-to-list 'load-path (expand-file-name "/usr/local/lib/erlang/lib/tools-2.7.1/emacs/"))
-(setq erlang-root-dir "/usr/local/lib/erlang")
-(add-to-list 'exec-path (expand-file-name "/usr/local/lib/erlang/bin"))
-(setq erlang-electric-commands '(erlang-electric-newline erlang-electric-gt erlang-electric-semecolon))
-(require 'erlang-start)
-(push '("*erlang*") popwin:special-display-config)
+;; (add-to-list 'load-path (expand-file-name "/usr/local/lib/erlang/lib/tools-2.7.1/emacs/"))
+;; (setq erlang-root-dir "/usr/local/lib/erlang")
+;; (add-to-list 'exec-path (expand-file-name "/usr/local/lib/erlang/bin"))
+;; (setq erlang-electric-commands '(erlang-electric-newline erlang-electric-gt erlang-electric-semecolon))
+;; (require 'erlang-start)
+;; (push '("*erlang*") popwin:special-display-config)
 
 ;; jsx
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
@@ -220,6 +211,7 @@
       (let ((web-mode-enable-part-face nil))
         ad-do-it)
     ad-do-it))
+(setq web-mode-markup-indent-offset 2)
 
 (flycheck-def-executable-var 'jsxhint-checker "jsxhint")
 (flycheck-define-command-checker 'jsxhint-checker
@@ -274,11 +266,6 @@
                             (local-set-key "\C-c\C-b" 'js-send-buffer-and-go)
                             (local-set-key "\C-cl" 'js-load-file-and-go)
                             (local-set-key "\C-c\C-r" 'js-send-region)))
-
-(require 'node-console)
-(eval-after-load "js2-mode"
-  '(progn
-     (define-key js2-mode-map (kbd "C-c C-c") 'node-console)))
 
 ;; quickrun
 (require 'quickrun)
