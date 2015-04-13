@@ -13,7 +13,8 @@ ln -sf ~/dotfiles/gitignore ~/.gitignore
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 mkdir -p ~/.emacs.d
 git clone http://github.com/cask/cask ~/.emacs.d/cask
-cp ~/.emacs.d/cask/cask.el ~/.emacs.d/
+mkdir -p ~/.cask
+cp ~/.emacs.d/cask/cask.el ~/.cask/cask.el
 git clone http://github.com/slime/slime ~/.emacs.d/slime
 brew tap snmsts/roswell
 brew install roswell
@@ -28,3 +29,4 @@ cp ~/.emacs.d/cl-annot/misc/slime-annot.el ~/.emacs.d/
 git clone https://github.com/deadtrickster/slime-repl-ansi-color
 cp ~/.emacs.d/slime-repl-ansi-color/slime-repl-ansi-color.el ~/.emacs.d/
 git clone https://github.com/emacs-helm/helm ~/.emacs.d/helm
+brew install reattach-to-user-namespace
