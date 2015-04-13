@@ -27,3 +27,4 @@ git clone https://github.com/m2ym/cl-annot ~/.emacs.d/cl-annot
 cp ~/.emacs.d/cl-annot/misc/slime-annot.el ~/.emacs.d/
 git clone https://github.com/deadtrickster/slime-repl-ansi-color
 cp ~/.emacs.d/slime-repl-ansi-color/slime-repl-ansi-color.el ~/.emacs.d/
+git clone https://github.com/emacs-helm/helm ~/.emacs.d/helm
