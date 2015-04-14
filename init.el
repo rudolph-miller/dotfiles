@@ -6,7 +6,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(helm-selection ((t (:underline "cyan"))))
+ '(helm-selection ((t (:background "brightblack"))))
  '(minibuffer-prompt ((t (:foreground "cyan")))))
 
 (setq-default indent-tabs-mode nil)
@@ -272,3 +272,12 @@
 (require 'quickrun)
 (push '("*quickrun*") popwin:special-display-config)
 (global-set-key (kbd "C-c C-r") 'quickrun)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("726dd9a188747664fbbff1cd9ab3c29a3f690a7b861f6e6a1c64462b64b306de" default)))
+ '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages)))
