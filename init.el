@@ -127,6 +127,7 @@
 
 (setq mac-pass-command-to-system nil)
 
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/popwin/"))
 (require 'popwin)
 (setq display-buffer-function 'popwin:display-buffer)
 
@@ -161,6 +162,7 @@
 (add-to-list 'auto-mode-alist
              '("\\.tmpl\\'" . html-mode))
 
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/js2-mode"))
 (require 'js2-mode)
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/espresso-mode/"))
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))

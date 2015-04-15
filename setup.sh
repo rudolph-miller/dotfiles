@@ -12,21 +12,37 @@ ln -sf ~/dotfiles/.rosrc ~/.rosrc
 ln -sf ~/dotfiles/gitignore ~/.gitignore
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 mkdir -p ~/.emacs.d
-git clone http://github.com/cask/cask ~/.emacs.d/cask
+if [ ! -d ~/.emacs.d/cask ]; then
+  git clone http://github.com/cask/cask ~/.emacs.d/cask
+fi
 mkdir -p ~/.cask
 cp ~/.emacs.d/cask/cask.el ~/.cask/cask.el
+if [ ! -d ~/.emacs.d/slime ]; then
 git clone http://github.com/slime/slime ~/.emacs.d/slime
+fi
 brew tap snmsts/roswell
 brew install roswell
-roswell setup
-roswell install sbcl
+ros setup
+ros install sbcl
 mkdir -p ~/.vim/neobundle
-git clone https://github.com/Shougo/neobundle.vim ~/.vim/neobundle/neobundle.vim
-git clone https://github.com/m2ym/popwin-el ~/.emacs.d/popwin
+if [ ! -d ~/.vim/neobundle/neobundle.vim ];then
+  git clone https://github.com/Shougo/neobundle.vim ~/.vim/neobundle/neobundle.vim
+fi
+if [ ! -d ~/.emacs.d/popwin ]; then
+  git clone https://github.com/m2ym/popwin-el ~/.emacs.d/popwin
+fi
 cp ~/.emacs.d/popwin/popwin.el ~/.emacs.d/
+if [ ! -d ~/.emacs.d/cl-annot ]; then
 git clone https://github.com/m2ym/cl-annot ~/.emacs.d/cl-annot
+fi
 cp ~/.emacs.d/cl-annot/misc/slime-annot.el ~/.emacs.d/
-git clone https://github.com/deadtrickster/slime-repl-ansi-color
+if [ ! -d ~/.emacs.d/slime-repl-ansi-color ]; then
+  git clone https://github.com/deadtrickster/slime-repl-ansi-color ~/.emacs.d/slime-repl-ansi-color
+fi
 cp ~/.emacs.d/slime-repl-ansi-color/slime-repl-ansi-color.el ~/.emacs.d/
-git clone https://github.com/emacs-helm/helm ~/.emacs.d/helm
-brew install reattach-to-user-namespace
+if [ ! -d ~/.emacs.d/helm ]; then
+  git clone https://github.com/emacs-helm/helm ~/.emacs.d/helm
+fi
+if [ ! -d ~/.emacs.d/js2-mode ]; then
+  git clone http://github.com/mooz/js2-mode ~/.emacs.d/js2-mode
+fi
