@@ -74,14 +74,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 
-# RVM
-[ -s ${HOME}/.rvm/scripts/rvm ] && source ${HOME}/.rvm/scripts/rvm
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH=$PATH:/sw/bin:$HOME/.nodebrew/current/bin
-
-export PATH=$PATH:$HOME/.cask/bin
+export PATH=$PATH:/sw/bin:$HOME/.nodebrew/current/bin:$HOME/.cask/bin:$HOME/.rvm/bin:$HOME/.linuxbrew/bin:/usr/local/heroku/bin:$PATH
 
 export NODE_PATH=/usr/local/lib/node_modules
 export GOPATH="/usr/local/go/"
