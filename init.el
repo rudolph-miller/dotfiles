@@ -21,6 +21,9 @@
             (define-key iswitchb-mode-map "\C-n" 'iswitchb-next-match)
             (define-key iswitchb-mode-map "\C-p" 'iswitchb-prev-match)))
 (global-auto-revert-mode 1)
+(display-time-mode 1)
+(column-number-mode 1)
+(display-battery-mode 1)
 
 (require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
