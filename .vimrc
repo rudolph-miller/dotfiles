@@ -139,18 +139,23 @@ inoremap <C-k> <ESC>
 set nocompatible
 filetype off
 filetype plugin indent off
- 
-  if has('vim_starting')
-    set runtimepath+=~/.vim/neobundle/neobundle.vim
-    call neobundle#rc(expand('~/.vim/neobundle/'))
-  endif
-  
-  NeoBundle 'vcscommand.vim'
-   
+
+if has('vim_starting')
+  set runtimepath+=~/.vim/neobundle/neobundle.vim
+endif
+
+call neobundle#begin(expand('~/.vim/neobundle/'))
+
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+call neobundle#end()
+
+
 filetype on
 filetype plugin on
 filetype indent on
 
+NeoBundle 'vcscommand.vim'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplcache'
