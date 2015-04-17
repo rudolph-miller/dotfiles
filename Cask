@@ -88,3 +88,6 @@
 
 ;; flycheck-pos-tip
 (depends-on "flycheck-pos-tip")
+
+;; evil-dvorak
+(depends-on "evil-dvorak")

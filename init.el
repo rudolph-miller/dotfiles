@@ -66,6 +66,8 @@
 (evil-mode 1)
 (setq evil-shift-width 2)
 
+(setq require-final-newline t)
+
 (require 'color-theme)
 
 (global-set-key "\C-h" 'backward-delete-char)
@@ -75,6 +77,12 @@
 (define-key evil-normal-state-map (kbd "C-e") 'move-end-of-line)
 (define-key evil-insert-state-map (kbd "C-k") 'previous-line)
 (define-key evil-insert-state-map (kbd "C-j") 'next-line)
+(define-key evil-insert-state-map (kbd "C-h") 'previous-char)
+(define-key evil-insert-state-map (kbd "C-l") 'next-char)
+(define-key evil-normal-state-map (kbd "C-k") 'previous-line)
+(define-key evil-normal-state-map (kbd "C-j") 'next-line)
+(define-key evil-normal-state-map (kbd "C-h") 'previous-char)
+(define-key evil-normal-state-map (kbd "C-l") 'next-char)
 
 (define-key evil-normal-state-map ")" 'sp-up-sexp)
 (define-key evil-normal-state-map "(" 'sp-down-sexp)
@@ -119,7 +127,7 @@
 (add-hook 'lisp-mode-hook
           (lambda ()
             (slime-mode t)
-            (show-paren-mode)))
+            (show-paren-mode t)))
 (add-hook 'lisp-mode-hook
           (lambda ()
             (global-set-key "\C-a" 'slime-switch-to-output-buffer)
@@ -286,3 +294,6 @@
    (quote
     ("726dd9a188747664fbbff1cd9ab3c29a3f690a7b861f6e6a1c64462b64b306de" default)))
  '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages)))
+
+(require 'evil-dvorak)
+(global-evil-dvorak-mode 1)
