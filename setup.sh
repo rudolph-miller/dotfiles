@@ -49,3 +49,4 @@ fi
 if [ ! -f /usr/lib/python*/site-packages/setuptools.pth ]; then
   curl https://bootstrap.pypa.io/ez_setup.py -o - | sudo python
 fi
+# https://github.com/jiangmiao/dvp
