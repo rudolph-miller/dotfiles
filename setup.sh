@@ -49,3 +49,6 @@ fi
 if [ ! -f /usr/lib/python*/site-packages/setuptools.pth ]; then
   curl https://bootstrap.pypa.io/ez_setup.py -o - | sudo python
 fi
+
+# http://kaufmann.no/downloads/linux/
+# http://kaufmann.no/downloads/linux/dvp-1_2_1.map.gz
