@@ -46,3 +46,6 @@ fi
 if [ ! -d ~/.emacs.d/js2-mode ]; then
   git clone http://github.com/mooz/js2-mode ~/.emacs.d/js2-mode
 fi
+if [ ! -f /usr/lib/python*/site-packages/setuptools.pth ]; then
+  curl https://bootstrap.pypa.io/ez_setup.py -o - | sudo python
+fi

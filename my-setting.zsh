@@ -17,6 +17,9 @@ alias search="w3m -cookie https://www.google.co.jp/search"
 alias em="emacs"
 alias node-sass="~/dev/node/node-sass/bin/node-sass"
 
+# start mysqld
+alias my_mysqld="sudo /usr/local/mysql/bin/mysqld_safe --datadir='/usr/local/mysql/data'"
+
 function search ()
 {
   w3m -cookie https://www.google.co.jp/search?q=$1

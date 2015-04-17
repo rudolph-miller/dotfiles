@@ -76,6 +76,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 ### Added by the Heroku Toolbelt
 
 export PATH=$PATH:/sw/bin:$HOME/.nodebrew/current/bin:$HOME/.cask/bin:$HOME/.rvm/bin:$HOME/.linuxbrew/bin:/usr/local/heroku/bin:$PATH
-
+export LD_LIBRARY_PATH=$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH
 export NODE_PATH=/usr/local/lib/node_modules
 export GOPATH="/usr/local/go/"
+export EDITOR="vim"
