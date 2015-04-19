@@ -6,8 +6,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(helm-selection ((t (:background "brightblack"))))
- '(minibuffer-prompt ((t (:foreground "cyan")))))
+ '(helm-selection ((((class color) (min-colors 89)) (:foreground "#767676" :background "#d7ff00"))))
+ '(minibuffer-prompt ((((class color) (min-colors 89)) (:foreground "#5f5f5f" :background "#a1db00" :bold nil)))))
 
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
@@ -292,7 +292,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("726dd9a188747664fbbff1cd9ab3c29a3f690a7b861f6e6a1c64462b64b306de" default)))
+    ("f782ed87369a7d568cee28d14922aa6d639f49dd676124d817dd82c8208985d0" "6c0a087a4f49c04d4002393ffd149672f70e4ab38d69bbe8b39059b61682b61c" "92d35a9332f9cb30881828fe0d58131aec5950430dc07c4f609980d4ddc5aef5" "49ad7c8d458074db7392f8b8a49235496e9228eb2fa6d3ca3a7aa9d23454efc6" "e80932ca56b0f109f8545576531d3fc79487ca35a9a9693b62bf30d6d08c9aaf" "42ccd5eadda3546a89026b94794df7f4addadf25417b96917cf9db2f892b25a4" "08851585c86abcf44bb1232bced2ae13bc9f6323aeda71adfa3791d6e7fea2b6" "726dd9a188747664fbbff1cd9ab3c29a3f690a7b861f6e6a1c64462b64b306de" default)))
  '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages)))
 
-(load-theme 'misterio
+(load-theme 'manoj-dark)
