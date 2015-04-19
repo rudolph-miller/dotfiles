@@ -16,9 +16,14 @@ alias ghi="TERM=xterm-256color ghi"
 alias search="w3m -cookie https://www.google.co.jp/search"
 alias em="emacs"
 alias node-sass="~/dev/node/node-sass/bin/node-sass"
+alias darker="redshift -o -l 0:0 -b 0.8 -t 6500:6500"
+alias ibus="ibus-daemon -d"
+alias init="ibus && darker"
 
 # start mysqld
 alias my_mysqld="sudo /usr/local/mysql/bin/mysqld_safe --datadir='/usr/local/mysql/data'"
+alias pgstart="pg_ctl start -D /usr/local/pg/data"
+alias lightdm="sudo systemctl start lightdm"
 
 function search ()
 {

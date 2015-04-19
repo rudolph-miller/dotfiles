@@ -49,4 +49,7 @@ fi
 if [ ! -f /usr/lib/python*/site-packages/setuptools.pth ]; then
   curl https://bootstrap.pypa.io/ez_setup.py -o - | sudo python
 fi
-# https://github.com/jiangmiao/dvp
+sudo mkdir -p /usr/share/kbd/keymaps/i386/dvorak
+if [ ! -f /usr/share/kbd/keymaps/i386/dvorak/mydvorak.map ]; then
+  sudo ln -fns ./mydvorak.map /usr/share/kbd/keymaps/i386/dvorak/mydvorak.map
+fi
