@@ -127,11 +127,14 @@
 (add-hook 'lisp-mode-hook
           (lambda ()
             (slime-mode t)
-            (show-paren-mode t)))
-(add-hook 'lisp-mode-hook
-          (lambda ()
+            (show-paren-mode t)
             (global-set-key "\C-a" 'slime-switch-to-output-buffer)
             (global-set-key "\C-ch" 'slime-hyperspec-lookup)))
+
+(add-hook 'slime-repl-mode-hook
+          (lambda ()
+            (slime-repl-ansi-on)
+            (define-key slime-repl-mode-map "\C-c\M-r" 'slime-restart-inferior-lisp)))
 
 (setq mac-pass-command-to-system nil)
 
