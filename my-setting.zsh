@@ -21,7 +21,6 @@ alias ibus="ibus-daemon -d"
 alias init="ibus && darker"
 
 # start mysqld
-alias my_mysqld="sudo /usr/local/mysql/bin/mysqld_safe --datadir='/usr/local/mysql/data'"
 alias pgstart="pg_ctl start -D /usr/local/pg/data"
 alias lightdm="sudo systemctl start lightdm"
 
