@@ -71,18 +71,10 @@
 
 (define-key evil-insert-state-map (kbd "C-e") 'move-end-of-line)
 (define-key evil-normal-state-map (kbd "C-e") 'move-end-of-line)
-;; (define-key evil-insert-state-map (kbd "C-k") 'previous-line)
-;; (define-key evil-insert-state-map (kbd "C-j") 'next-line)
-;; (define-key evil-insert-state-map (kbd "C-h") 'backward-char)
-;; (define-key evil-insert-state-map (kbd "C-l") 'forward-char)
-;; (define-key evil-normal-state-map (kbd "C-k") 'previous-line)
-;; (define-key evil-normal-state-map (kbd "C-j") 'next-line)
-;; (define-key evil-normal-state-map (kbd "C-h") 'backward-char)
-;; (define-key evil-normal-state-map (kbd "C-l") 'forward-char)
-(define-key evil-normal-state-map (kbd "C-t") 'previous-line)
-(define-key evil-normal-state-map (kbd "C-h") 'next-line)
-(define-key evil-normal-state-map (kbd "C-d") 'backward-char)
-(define-key evil-normal-state-map (kbd "C-n") 'forward-char)
+(define-key evil-insert-state-map (kbd "C-k") 'previous-line)
+(define-key evil-insert-state-map (kbd "C-j") 'next-line)
+(define-key evil-insert-state-map (kbd "C-h") 'backward-char)
+(define-key evil-insert-state-map (kbd "C-l") 'forward-char)
 
 (define-key evil-normal-state-map ")" 'sp-up-sexp)
 (define-key evil-normal-state-map "(" 'sp-down-sexp)
@@ -299,3 +291,32 @@
  '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages)))
 
 (load-theme 'manoj-dark)
+
+;; twittering-mode
+(require 'twittering-mode)
+(setq twittering-use-master-password t)
+(setq twittering-use-ssl t)
+(setq twittering-icon-mode t)
+(setq twittering-timer-interval 300)
+(setq twittering-url-show-status t)
+(setq twittering-icon-storage-limit t)
+
+;; eww
+(setq eww-search-prefix "https://www.google.co.jp/search?q=")
+(defvar eww-disable-colorize t)
+(defun shr-colorize-region--disable (orig start end fg &optional bg &rest _)
+  (unless eww-disable-colorize
+    (funcall orig start end fg)))
+(advice-add 'shr-colorize-region :around 'shr-colorize-region--disable)
+(advice-add 'eww-colorize-region :around 'shr-colorize-region--disable)
+(defun eww-disable-color ()
+  (interactive)
+  (setq-local eww-disable-colorize t)
+  (eww-reload))
+(defun eww-enable-color ()
+  (interactive)
+  (setq-local eww-disable-colorize nil)
+  (eww-reload))
+(setq browse-url-browser-function 'eww-browse-url)
+
+

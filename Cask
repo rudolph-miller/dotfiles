@@ -91,3 +91,6 @@
 
 ;; evil-dvorak
 (depends-on "evil-dvorak")
+
+;; twittering-mode
+(depends-on "twittering-mode")
