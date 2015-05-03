@@ -15,7 +15,7 @@
 (setq coding-system-for-read 'utf-8)
 (setq coding-system-for-write 'utf-8)
 (set-language-environment "Japanese")
-(iswitchb-mode 1)
+(icomplete-mode 1)
 (global-auto-revert-mode 1)
 (display-time-mode 1)
 (column-number-mode 1)
@@ -320,3 +320,7 @@
 (setq browse-url-browser-function 'eww-browse-url)
 
 
+;; SML
+(add-to-list 'auto-mode-alist '("\\.sml$" . sml-mode))
+(autoload 'sml-mode "sml-mode" "Major mode for editing SML." t)
+(autoload 'run-sml "sml-proc" "Run an inferior SML process." t)
