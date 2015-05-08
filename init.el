@@ -319,8 +319,12 @@
   (eww-reload))
 (setq browse-url-browser-function 'eww-browse-url)
 
-
 ;; SML
 (add-to-list 'auto-mode-alist '("\\.sml$" . sml-mode))
 (autoload 'sml-mode "sml-mode" "Major mode for editing SML." t)
 (autoload 'run-sml "sml-proc" "Run an inferior SML process." t)
+
+;; Rust
+(autoload 'rust-mode "rust-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
+(add-to-list 'auto-mode-alist '("\\.rust\\'" . rust-mode))
