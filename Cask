@@ -97,3 +97,6 @@
 
 ;; rust-mode
 (depends-on "rust-mode")
+
+;; flycheck-rust
+(depends-on "flycheck-rust")
