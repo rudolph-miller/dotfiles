@@ -100,3 +100,6 @@
 
 ;; flycheck-rust
 (depends-on "flycheck-rust")
+
+;; go-mode
+(depends-on "go-mode")
