@@ -1,9 +1,9 @@
 if [ `type -p acpi` ]; then
   if [ "`acpi -b | grep -oE Discharging`" = "Discharging" ] ; then
-    echo -n \#\[fg=yellow, bold\]
+    echo -n \#\[fg=white, bold\]
     echo -n "Discharging: "
   else
-    echo -n \#\[fg=green,bold\]
+    echo -n \#\[fg=white, bold\]
     echo -n "Charging: "
   fi
 
