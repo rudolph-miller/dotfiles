@@ -2,8 +2,6 @@ export GREP_COLOR='1;37;41'
 export CC='/usr/local/bin/gcc-4.9'
 alias grep='grep -E --color=auto'
 
-eval "$(rbenv init -)"
-
 alias ll='ls -l'
 alias lg="ls -G"
 alias llg="ls -lG"
@@ -59,4 +57,3 @@ SPROMPT="%{$fg[red]%}%{$suggest%}(●ↀωↀ●)✧? < %B%r%b %{$fg[red]%}に�
 
 setopt auto_cd
 function chpwd() { ls }
-eval "$(hub alias -s)"

@@ -81,3 +81,6 @@ export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib:$LD_LIBRARY_PATH
 export NODE_PATH=/usr/local/lib/node_modules
 export GOPATH="/usr/local/go/"
 export EDITOR="vim"
+
+eval "$(hub alias -s)"
+eval "$(rbenv init -)"

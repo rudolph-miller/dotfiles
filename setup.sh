@@ -20,10 +20,6 @@ cp ~/.emacs.d/cask/cask.el ~/.cask/cask.el
 if [ ! -d ~/.emacs.d/slime ]; then
 git clone http://github.com/slime/slime ~/.emacs.d/slime
 fi
-brew tap snmsts/roswell
-brew install roswell
-ros setup
-ros install sbcl
 mkdir -p ~/.vim/neobundle
 if [ ! -d ~/.vim/neobundle/neobundle.vim ];then
   git clone https://github.com/Shougo/neobundle.vim ~/.vim/neobundle/neobundle.vim
@@ -50,6 +46,6 @@ if [ ! -f /usr/lib/python*/site-packages/setuptools.pth ]; then
   curl https://bootstrap.pypa.io/ez_setup.py -o - | sudo python
 fi
 sudo mkdir -p /usr/share/kbd/keymaps/i386/dvorak
-if [ ! -f /usr/share/kbd/keymaps/i386/dvorak/mydvorak.map ]; then
-  sudo ln -fns ./mydvorak.map /usr/share/kbd/keymaps/i386/dvorak/mydvorak.map
+if [ ! -f /usr/share/kbd/keymaps/i386/dvorak/dvk.map ]; then
+  sudo ln -fns $HOME/dotfiles/dvk.map /usr/share/kbd/keymaps/i386/dvorak/dvk.map
 fi
