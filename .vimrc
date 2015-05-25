@@ -36,18 +36,6 @@ filetype plugin on
 "Set a nice Omnifunc - <CTRL>X <CTRL>O
 set ofu=syntaxcomplete#Complete
 
-
-"Set some nice java functions - <CTRL>X <CTRL>U
-set completefunc=javacomplete#Complete
-
-"Make javac the build prog - :make
-"You will need to change this per project to account for libs..
-"Choose on of the following for starters
-"YOU MUST start vim from the 'src/' folder. or javac wont work..
-
-"This is the simplest possible
-autocmd Filetype java set makeprg=javac\ %
-
 "Coffee script
 au BufRead,BufNewFile *.coffee set filetype=coffee
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
@@ -77,27 +65,14 @@ au BufRead,BufNewFile *.html set filetype=html
 au BufNewFile,BufReadPost *.html setl shiftwidth=2 expandtab
 autocmd FileType html setlocal sw=2 sts=2 ts=2 et
 
-"TEML
+"TMPL
 au BufRead,BufNewFile *.tmpl set filetype=html
 au BufNewFile,BufReadPost *.tmpl setl shiftwidth=2 expandtab
 autocmd FileType html setlocal sw=2 sts=2 ts=2 et
 
-"This is a good default one - works for projects without libs
-"autocmd Filetype java set makeprg=javac\ -d\ ../build/\ %
-
-"Mapped some FUNCTION keys to be more useful..
-map <F7> :make<Return>:copen<Return>
-map <F8> :cprevious<Return>
-map <F9> :cnext<Return>
-
-"This is a nice buffer switcher
-:nnoremap <F5> :buffers<CR>:buffer<Space>
-
-" These are useful when using MinBufExpl
-" BUT the CTRL+ARROW key mappings are still wrong on Terminal IDE soft Keyboard..
-" This will only work over telnet/ssh . Fix Soon.
-"let g:miniBufExplMapWindowNavVim = 1
-"let g:miniBufExplMapWindowNavArrows = 1
+"Rust
+au BufRead,BufNewFile *.rs set filetype=rust
+au BufRead,BufNewFile *.rust set filetype=rust
 
 "You can change colors easily in vim. 
 "Just type <ESC>:colorscheme and then TAB complete through the options 
@@ -132,9 +107,20 @@ nnoremap <F3> :TlistToggle<CR>
 let Tlist_Use_Right_Window = 1
 let Tlist_WinWidth = 50
 
-" noremap ; :
-" noremap : ;
-inoremap <C-k> <ESC>
+let g:quickrun_config = {
+      \ "_" : {
+      \ "outputter/buffer/split" : ":botright",
+      \ "outputter/buffer/close_on_empty" : 1
+      \ },
+      \   "cargo" : {
+      \       "command"   : "cargo",
+      \       "exec" : "%c run %s"
+      \   },
+      \ "rust": {
+      \    "type": "cargo"
+      \ }
+      \}
+nnoremap <expr><silent> <C-d> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-d>"
 
 set nocompatible
 filetype off
@@ -171,3 +157,5 @@ NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 NeoBundle 'mattn/emmet-vim'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'rust-lang/rust.vim'

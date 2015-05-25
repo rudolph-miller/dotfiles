@@ -121,7 +121,9 @@
             (slime-mode t)
             (show-paren-mode t)
             (global-set-key "\C-a" 'slime-switch-to-output-buffer)
-            (global-set-key "\C-ch" 'slime-hyperspec-lookup)))
+            (global-set-key "\C-ch" 'slime-hyperspec-lookup)
+            (global-set-key (kbd "M-a") 'slime-edit-definition)))
+
 
 (add-hook 'slime-repl-mode-hook
           (lambda ()
@@ -319,8 +321,20 @@
   (eww-reload))
 (setq browse-url-browser-function 'eww-browse-url)
 
-
 ;; SML
 (add-to-list 'auto-mode-alist '("\\.sml$" . sml-mode))
 (autoload 'sml-mode "sml-mode" "Major mode for editing SML." t)
 (autoload 'run-sml "sml-proc" "Run an inferior SML process." t)
+
+;; Rust
+(autoload 'rust-mode "rust-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
+(add-to-list 'auto-mode-alist '("\\.rust\\'" . rust-mode))
+(eval-after-load 'flycheck
+                 '(add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
+
+(quickrun-add-command "cargo"
+                      '((:command . "cargo")
+                        (:exec    . "%c run %s"))
+                      :mode 'rust-mode)
+(quickrun-set-default "rust" "cargo")

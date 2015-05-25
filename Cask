@@ -94,3 +94,12 @@
 
 ;; twittering-mode
 (depends-on "twittering-mode")
+
+;; rust-mode
+(depends-on "rust-mode")
+
+;; flycheck-rust
+(depends-on "flycheck-rust")
+
+;; go-mode
+(depends-on "go-mode")
