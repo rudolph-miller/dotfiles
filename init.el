@@ -89,6 +89,8 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/slime-repl-ansi-color/"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/cl-annot/misc/"))
 
+(require 'slime-annot)
+
 (setq inferior-lisp-program "ros run -Q -l ~/.rosrc -s")
 ;; (setq inferior-lisp-program "ccl")
 ;; (setq inferior-lisp-program "clisp")
