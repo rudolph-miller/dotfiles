@@ -3,19 +3,15 @@
 ## Usage
 
 ## Installation
-<%- @if author %>
 
 ## Author
 
-* <% @var author %><% @if email %> (<% @var email %>)<% @endif %>
+* Rudolph Miller (chopsticks.tk.ppfm@gmail.com)
 
 ## Copyright
 
-Copyright (c) <%= (local-time:timestamp-year (local-time:now)) %> <% @var author %><% @if email %> (<% @var email %>)<% @endif %>
-<%- @endif %>
-<%- @if license %>
+Copyright (c) <%= (local-time:timestamp-year (local-time:now)) %> Rudolph Miller (chopsticks.tk.ppfm@gmail.com)
 
 ## License
 
-Licensed under the <% @var license %> License.
-<%- @endif %>
+Licensed under the MIT License.
