@@ -1,6 +1,9 @@
 (in-package :cl-user)
 (defpackage <% @var name %>
-  (:use :cl))
+  (:use :cl
+        :annot.doc))
 (in-package :<% @var name %>)
 
 ;; blah blah blah.
+
+(syntax:use-syntax :annot)

@@ -26,7 +26,9 @@
   <%- @else %>
   :homepage "https://github.com/Rudolph-Miller/<% @var name %>"
   <%- @endif %>
-  :depends-on (<% (format t "~{:~(~A~)~^~%               ~}"
+  :depends-on (:cl-syntax
+               :cl-syntax-annot
+               <% (format t "~{:~(~A~)~^~%               ~}"
                           (getf env :depends-on)) %>)
   :components ((:module "src"
                 :components
