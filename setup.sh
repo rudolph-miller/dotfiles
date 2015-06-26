@@ -1,4 +1,5 @@
 #!/bin/sh
+mkdir -p ~/.roswell
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/.vim ~/.vim
 ln -sf ~/dotfiles/.zshrc ~/.zshrc 
@@ -10,6 +11,7 @@ ln -sf ~/dotfiles/Cask ~/.emacs.d/Cask
 ln -sf ~/dotfiles/jshintrc ~/.emacs.d/.jshintrc
 ln -sf ~/dotfiles/mytheme.zsh-theme ~/.oh-my-zsh/themes/mytheme.zsh-theme
 ln -sf ~/dotfiles/.rosrc ~/.rosrc
+ln -sf ~/dotfiles/init.lisp ~/.roswell/init.lisp
 ln -sf ~/dotfiles/gitignore ~/.gitignore
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 mkdir -p ~/.emacs.d
@@ -49,4 +51,8 @@ fi
 sudo mkdir -p /usr/share/kbd/keymaps/i386/dvorak
 if [ ! -f /usr/share/kbd/keymaps/i386/dvorak/dvk.map ]; then
   sudo ln -fns $HOME/dotfiles/dvk.map /usr/share/kbd/keymaps/i386/dvorak/dvk.map
+  sudo loadkeys i386/dvorak/dvk.map
 fi
+
+mkdir -p $HOME/.config/common-lisp
+cp -rf $HOME/dotfiles/skeleton $HOME/.config/common-lisp/

@@ -134,13 +134,6 @@ call neobundle#begin(expand('~/.vim/neobundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-call neobundle#end()
-
-
-filetype on
-filetype plugin on
-filetype indent on
-
 NeoBundle 'vcscommand.vim'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
@@ -159,3 +152,9 @@ NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'rust-lang/rust.vim'
+
+call neobundle#end()
+
+filetype on
+filetype plugin on
+filetype indent on
