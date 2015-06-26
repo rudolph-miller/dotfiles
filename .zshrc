@@ -84,3 +84,7 @@ export EDITOR="vim"
 
 eval "$(hub alias -s)"
 eval "$(rbenv init -)"
+
+if command -v tmux>/dev/null; then
+  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+fi
