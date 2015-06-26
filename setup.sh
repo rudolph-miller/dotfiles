@@ -48,6 +48,7 @@ fi
 sudo mkdir -p /usr/share/kbd/keymaps/i386/dvorak
 if [ ! -f /usr/share/kbd/keymaps/i386/dvorak/dvk.map ]; then
   sudo ln -fns $HOME/dotfiles/dvk.map /usr/share/kbd/keymaps/i386/dvorak/dvk.map
+  sudo loadkeys i386/dvorak/dvk.map
 fi
 
 mkdir -p $HOME/.config/common-lisp
