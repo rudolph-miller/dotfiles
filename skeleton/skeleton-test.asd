@@ -21,7 +21,7 @@
   :components ((:module "t"
                 :components
                 ((:test-file "<% @var name %>"))))
-  :description "Test system for <% @var name %>"
+  :description "Test system for <% @var name %>."
 
   :defsystem-depends-on (:prove-asdf)
   :perform (test-op :after (op c)
