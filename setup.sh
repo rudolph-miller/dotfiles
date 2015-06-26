@@ -1,4 +1,5 @@
 #!/bin/sh
+mkdir -p ~/.roswell
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/.vim ~/.vim
 ln -sf ~/dotfiles/.zshrc ~/.zshrc 
@@ -9,6 +10,7 @@ ln -sf ~/dotfiles/Cask ~/.emacs.d/Cask
 ln -sf ~/dotfiles/jshintrc ~/.emacs.d/.jshintrc
 ln -sf ~/dotfiles/mytheme.zsh-theme ~/.oh-my-zsh/themes/mytheme.zsh-theme
 ln -sf ~/dotfiles/.rosrc ~/.rosrc
+ln -sf ~/dotfiles/init.lisp ~/.roswell/init.lisp
 ln -sf ~/dotfiles/gitignore ~/.gitignore
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 mkdir -p ~/.emacs.d

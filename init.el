@@ -1,7 +1,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Cask
 
-(require 'cask "~/.cask/cask.el")
+(require 'cask "~/.emacs.d/cask/cask.el")
 (cask-initialize)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -91,7 +91,7 @@
 
 (require 'slime-annot)
 
-(setq inferior-lisp-program "ros run -Q -l ~/.rosrc -s")
+(setq inferior-lisp-program "ros run -Q -s")
 ;; (setq inferior-lisp-program "ccl")
 ;; (setq inferior-lisp-program "clisp")
 
