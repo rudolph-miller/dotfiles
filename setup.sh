@@ -16,10 +16,8 @@ ln -sf ~/dotfiles/gitignore ~/.gitignore
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 mkdir -p ~/.emacs.d
 if [ ! -d ~/.emacs.d/cask ]; then
-  git clone http://github.com/cask/cask ~/.emacs.d/cask
+  git clone http://github.com/cask/cask ~/.cask
 fi
-mkdir -p ~/.cask
-cp ~/.emacs.d/cask/cask.el ~/.cask/cask.el
 if [ ! -d ~/.emacs.d/slime ]; then
 git clone http://github.com/slime/slime ~/.emacs.d/slime
 fi
