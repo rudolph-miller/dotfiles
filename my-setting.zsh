@@ -1,31 +1,17 @@
 export GREP_COLOR='1;37;41'
-export CC='/usr/local/bin/gcc-4.9'
 alias grep='grep -E --color=auto'
 
 alias ll='ls -l'
 alias lg="ls -G"
 alias llg="ls -lG"
-alias hs="hadoop jar /opt/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.4.0.jar"
-alias sakura="ssh -i ~/.ssh/sakura.pem 219.94.255.55"
-alias ghost="ssh -i ~/.ssh/sakura.pem ghost@219.94.255.55"
 alias ey="$HOME/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/engineyard-3.0.1/bin/ey"
-alias tr="$HOME/.rbenv/versions/2.0.0-p451/bin/trello"
 alias ghi="TERM=xterm-256color ghi"
-alias search="w3m -cookie https://www.google.co.jp/search"
 alias em="emacs"
-alias node-sass="~/dev/node/node-sass/bin/node-sass"
 alias darker="redshift -o -l 0:0 -b 0.8 -t 6500:6500"
 alias ibus="ibus-daemon -d"
 alias init="ibus && darker"
 
-# start mysqld
 alias pgstart="pg_ctl start -D /usr/local/pg/data"
-alias lightdm="sudo systemctl start lightdm"
-
-function search ()
-{
-  w3m -cookie https://www.google.co.jp/search?q=$1
-}
 
 autoload -U compinit
 compinit
