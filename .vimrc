@@ -152,6 +152,7 @@ NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'rust-lang/rust.vim'
+NeoBundle 'tpope/vim-rails'
 
 call neobundle#end()
 
