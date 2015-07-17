@@ -19,7 +19,7 @@ if [ ! -d ~/.emacs.d/cask ]; then
   git clone http://github.com/cask/cask ~/.cask
 fi
 if [ ! -d ~/.emacs.d/slime ]; then
-git clone http://github.com/slime/slime ~/.emacs.d/slime
+  git clone http://github.com/slime/slime ~/.emacs.d/slime
 fi
 mkdir -p ~/.vim/neobundle
 if [ ! -d ~/.vim/neobundle/neobundle.vim ];then
@@ -30,7 +30,7 @@ if [ ! -d ~/.emacs.d/popwin ]; then
 fi
 cp ~/.emacs.d/popwin/popwin.el ~/.emacs.d/
 if [ ! -d ~/.emacs.d/cl-annot ]; then
-git clone https://github.com/m2ym/cl-annot ~/.emacs.d/cl-annot
+  git clone https://github.com/m2ym/cl-annot ~/.emacs.d/cl-annot
 fi
 cp ~/.emacs.d/cl-annot/misc/slime-annot.el ~/.emacs.d/
 if [ ! -d ~/.emacs.d/slime-repl-ansi-color ]; then
@@ -44,13 +44,17 @@ if [ ! -d ~/.emacs.d/js2-mode ]; then
   git clone http://github.com/mooz/js2-mode ~/.emacs.d/js2-mode
 fi
 if [ ! -f /usr/lib/python*/site-packages/setuptools.pth ]; then
-  curl https://bootstrap.pypa.io/ez_setup.py -o - | sudo python
+  if [ ! -f /Library/Python/*/site-packages/setuptools.pth ]; then
+    curl https://bootstrap.pypa.io/ez_setup.py -o - | sudo python
+  fi
 fi
 sudo mkdir -p /usr/share/kbd/keymaps/i386/dvorak
 if [ ! -f /usr/share/kbd/keymaps/i386/dvorak/dvk.map ]; then
   sudo ln -fns $HOME/dotfiles/dvk.map /usr/share/kbd/keymaps/i386/dvorak/dvk.map
   sudo loadkeys i386/dvorak/dvk.map
 fi
+
+go get -u github.com/nsf/gocode
 
 mkdir -p $HOME/.config/common-lisp
 cp -rf $HOME/dotfiles/skeleton $HOME/.config/common-lisp/
