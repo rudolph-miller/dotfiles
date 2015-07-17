@@ -31,6 +31,13 @@
 (setq mac-pass-command-to-system nil)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Auto Complete
+
+(require 'auto-complete)
+(require 'auto-complete-config)
+(ac-config-default)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Flycheck
 
 (require 'flycheck)
@@ -349,10 +356,6 @@
       (setq magit-diff-options (remove "-w" magit-diff-options))
         (magit-refresh))
 
-;;;;;;;;;;;;;;;;;;;
-;; evil key bindings
-;;;;;;;;;;;;;;;;;;;
-
 (evil-set-initial-state 'magit-log-edit-mode 'insert)
 (evil-set-initial-state 'git-commit-mode 'insert)
 (evil-set-initial-state 'magit-commit-mode 'motion)
@@ -467,5 +470,18 @@
   "g0" 'evil-beginning-of-visual-line
   "gE" 'evil-backward-WORD-end
   "g^" 'evil-first-n)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Markdown
+
+(require 'livedown)
+
+(global-set-key (kbd "M-m") 'livedown:preview)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Golang
+
+(require 'go-autocomplete)
+(add-hook 'go-mode-hook 'go-eldoc-setup)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
