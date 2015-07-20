@@ -153,6 +153,7 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'tpope/vim-rails'
+NeoBundle 'elixir-lang/vim-elixir'
 
 call neobundle#end()
 

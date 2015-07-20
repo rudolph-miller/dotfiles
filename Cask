@@ -109,3 +109,9 @@
 ;; markdown
 (depends-on "markdown-mode")
 (depends-on "livedown" :git "https://github.com/shime/emacs-livedown")
+
+;; elixir
+(depends-on "alchemist")
+
+;; perl
+(depends-on "perl-completion")

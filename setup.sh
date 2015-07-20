@@ -58,3 +58,7 @@ go get -u github.com/nsf/gocode
 
 mkdir -p $HOME/.config/common-lisp
 cp -rf $HOME/dotfiles/skeleton $HOME/.config/common-lisp/
+
+if [ ! -d ~/.plenv ]; then
+  git clone git://github.com/tokuhirom/plenv.git ~/.plenv
+fi

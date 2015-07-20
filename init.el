@@ -38,6 +38,11 @@
 (ac-config-default)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Company-mode
+
+(add-hook 'after-init-hook 'global-company-mode)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Flycheck
 
 (require 'flycheck)
@@ -483,5 +488,25 @@
 
 (require 'go-autocomplete)
 (add-hook 'go-mode-hook 'go-eldoc-setup)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Elixir
+
+(require 'alchemist)
+(setq alchemist-mix-command "/usr/local/bin/mix")
+(push '("*alchemist-test-report*") popwin:special-display-config)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; perl
+
+(setq cperl-indent-parens-as-block t)
+(setq perl-indent-parens-as-block t)
+
+(add-hook 'cperl-mode-hook
+          (lambda ()
+            (when (require 'auto-complete nil t) ; no error whatever auto-complete.el is not installed.
+              (auto-complete-mode t)
+              (make-variable-buffer-local 'ac-sources)
+              (setq ac-sources '(ac-source-perl-completion)))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
