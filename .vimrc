@@ -154,9 +154,14 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'elixir-lang/vim-elixir'
+NeoBundle 'scrooloose/syntastic'
 
 call neobundle#end()
 
 filetype on
 filetype plugin on
 filetype indent on
+
+let g:syntastic_check_on_open = 1
+let g:syntastic_mode_map = { 'mode': 'passive',
+            \ 'active_filetypes': ['ruby'] }
