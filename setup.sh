@@ -49,7 +49,9 @@ if [ ! -f /usr/lib/python*/site-packages/setuptools.pth ]; then
     curl https://bootstrap.pypa.io/ez_setup.py -o - | sudo python
   fi
 fi
-sudo mkdir -p /usr/share/kbd/keymaps/i386/dvorak
+if [ ! -d /usr/share/kbd/keymaps/i386/dvorak ]; then
+  sudo mkdir -p /usr/share/kbd/keymaps/i386/dvorak
+fi
 if [ ! -f /usr/share/kbd/keymaps/i386/dvorak/dvk.map ]; then
   sudo ln -fns $HOME/dotfiles/dvk.map /usr/share/kbd/keymaps/i386/dvorak/dvk.map
   sudo loadkeys i386/dvorak/dvk.map
