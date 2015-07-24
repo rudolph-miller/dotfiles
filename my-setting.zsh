@@ -1,15 +1,11 @@
 export GREP_COLOR='1;37;41'
-alias grep='grep -E --color=auto'
 
+alias grep='grep -E --color=auto'
 alias ll='ls -l'
 alias lg="ls -G"
 alias llg="ls -lG"
-alias ey="$HOME/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/engineyard-3.0.1/bin/ey"
 alias ghi="TERM=xterm-256color ghi"
 alias em="emacs"
-alias darker="redshift -o -l 0:0 -b 0.8 -t 6500:6500"
-alias ibus="ibus-daemon -d"
-alias init="ibus && darker"
 
 alias pgstart="pg_ctl start -D /usr/local/pg/data"
 
