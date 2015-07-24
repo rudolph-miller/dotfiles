@@ -14,8 +14,9 @@ ln -sf ~/dotfiles/.rosrc ~/.rosrc
 ln -sf ~/dotfiles/init.lisp ~/.roswell/init.lisp
 ln -sf ~/dotfiles/gitignore ~/.gitignore
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
+ln -sf ~/dotfiles/.rubocop.yml ~/.rubocop.yml
 mkdir -p ~/.emacs.d
-if [ ! -d ~/.emacs.d/cask ]; then
+if [ ! -d ~/.cask ]; then
   git clone http://github.com/cask/cask ~/.cask
 fi
 if [ ! -d ~/.emacs.d/slime ]; then
