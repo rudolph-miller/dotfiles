@@ -56,4 +56,3 @@
 (depends-on "livedown" :git "https://github.com/shime/emacs-livedown")
 (depends-on "alchemist")
 (depends-on "perl-completion")
-(depends-on "rubocop")
