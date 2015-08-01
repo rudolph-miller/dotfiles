@@ -53,3 +53,6 @@
 (depends-on "alchemist")
 (depends-on "perl-completion")
 (depends-on "haskell-mode")
+(depends-on "ruby-electric")
+(depends-on "ruby-block")
+(depends-on "rubocop")
