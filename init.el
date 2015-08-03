@@ -227,7 +227,6 @@
         ad-do-it)
     ad-do-it))
 
-(setq web-mode-markup-indent-offset 2)
 
 (flycheck-def-executable-var 'jsxhint-checker "jsxhint")
 (flycheck-define-command-checker 'jsxhint-checker
@@ -240,10 +239,22 @@
 
 (add-hook 'web-mode-hook
           (lambda ()
+            (setq web-mode-markup-indent-offset 2)
+            (setq web-mode-code-indent-offset 2)
             (when (equal web-mode-content-type "jsx")
               ;; enable flycheck
               (flycheck-select-checker 'jsxhint-checker)
               (flycheck-mode))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Web mode
+
+(add-to-list 'auto-mode-alist '("\\.phtml$"     . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php$" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jsp$"       . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x$"   . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb$"       . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?$"     . web-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Yaml mode
