@@ -73,8 +73,14 @@ namespace :emacs do
   end
 end
 
-task :brew do
-  sh 'cat brewfile | xargs -L1 brew install'
+namespace :brew do
+  task :install do
+    sh 'cat brewfile | xargs -L1 brew install'
+  end
+
+  task :export do
+    sh "brew list > #{HOME}/dotfiles/brewfile"
+  end
 end
 
 namespace :cask do
