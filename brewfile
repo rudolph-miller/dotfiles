@@ -44,13 +44,16 @@ make
 markdown
 mercurial
 mysql
+objective-caml
 openssl
 packer
 pcre
 perl
 perl-build
+phantomjs
 pkg-config
 postgresql
+qt5
 rakudo-star
 rbenv
 readline
