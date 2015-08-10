@@ -1,6 +1,5 @@
-(ql:quickload :prove)
+(ql:quickload '(:prove :qlot) :silent t)
 (setf prove:*enable-colors* t)
-(ql:quickload :qlot)
 (ros:ignore-shebang)
 (setf sb-impl::*default-external-format* :utf-8)
 (setf sb-alien::*default-c-string-external-format* :utf-8)
