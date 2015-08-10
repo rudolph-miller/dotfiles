@@ -56,3 +56,4 @@
 (depends-on "ruby-electric")
 (depends-on "ruby-block")
 (depends-on "rubocop")
+(depends-on "tuareg")

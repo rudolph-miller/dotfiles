@@ -86,6 +86,10 @@ end
 namespace :cask do
   task :setup do
     sh "git clone http://github.com/cask/cask #{HOME}/.cask" unless Dir.exist?("#{HOME}/.cask")
+    Rake::Task['cask:install'].invoke
+  end
+
+  task :install do
     Dir.chdir("#{HOME}/.emacs.d/") do
       sh 'cask install'
     end
