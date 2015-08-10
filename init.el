@@ -403,3 +403,8 @@
 (add-hook 'haskell-mode-hook 'imenu-add-menubar-index)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; OCaml
+
+(add-to-list 'auto-mode-alist '("\\.ml[iylp]?" . tuareg-mode))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
