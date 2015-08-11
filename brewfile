@@ -3,6 +3,7 @@ autoconf
 automake
 aws-elasticbeanstalk
 awscli
+boost
 boot2docker
 brew-cask
 clasp
@@ -53,6 +54,7 @@ perl-build
 phantomjs
 pkg-config
 postgresql
+povray
 qt5
 rakudo-star
 rbenv
