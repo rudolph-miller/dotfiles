@@ -159,17 +159,31 @@
 (push '(slime-connection-list-mode) popwin:special-display-config)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Smartparens
+;; Paredit
 
-(require 'smartparens-config)
+(loop for mode in '(emacs-lisp-mode
+                     lisp-mode
+                     lisp-interaction-mode
+                     scheme-mode)
+      do (add-hook (intern (concat (symbol-name mode) "-hook"))
+                   (lambda ()
+                     (require 'paredit)
+                     (paredit-mode t)
+                     (evil-paredit-mode t))))
 
-(defun enable-smartparens-mode ()
-  (unless smartparens-mode
-    (smartparens-mode)))
+(eval-after-load "paredit"
+                 '(progn
+                    (define-key paredit-mode-map "[" 'paredit-open-bracket)
+                    (define-key paredit-mode-map "]" 'paredit-close-bracket)
+                    (define-key paredit-mode-map "(" 'paredit-open-parenthesis)
+                    (define-key paredit-mode-map ")" 'paredit-close-parenthesis)
+                    (define-key paredit-mode-map "{" 'paredit-open-curly)
+                    (define-key paredit-mode-map "}" 'paredit-close-curly)
 
-(add-hook 'slime-mode-hook #'enable-smartparens-mode)
-(add-hook 'lisp-mode-hook #'enable-smartparens-mode)
-(add-hook 'emacs-lisp-mode-hook #'enable-smartparens-mode)
+                    (global-set-key (kbd "M-l") 'paredit-forward-slurp-sexp)
+                    (global-set-key (kbd "M-h") 'paredit-forward-barf-sexp)
+                    (global-set-key (kbd "M-k") 'paredit-kill)))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; HTML mode
