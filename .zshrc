@@ -86,6 +86,6 @@ eval "$(hub alias -s)"
 eval "$(rbenv init -)"
 eval "$(plenv init -)"
 
-if command -v tmux>/dev/null; then
-  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-fi
+# if command -v tmux>/dev/null; then
+#   [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+# fi
