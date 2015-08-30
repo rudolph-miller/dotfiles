@@ -1,4 +1,5 @@
 require 'rspec/core/rake_task'
+require 'mkmf'
 
 HOME = ENV['HOME']
 
@@ -74,12 +75,26 @@ namespace :emacs do
 end
 
 namespace :brew do
+  task :setup do
+    sh 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"' unless find_executable 'brew'
+    Rake::Task['brew:install'].invoke
+  end
+
   task :install do
+    sh 'cat brewtapfile | xargs -L1 brew tap'
     sh 'cat brewfile | xargs -L1 brew install'
   end
 
-  task :export do
-    sh "brew list > #{HOME}/dotfiles/brewfile"
+  task export: ['brew:export:tap', 'brew:export:library']
+
+  namespace :export do
+    task :tap do
+      sh "brew tap > #{HOME}/dotfiles/brewtapfile"
+    end
+
+    task :library do
+      sh "brew list > #{HOME}/dotfiles/brewfile"
+    end
   end
 end
 
