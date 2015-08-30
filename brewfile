@@ -9,6 +9,7 @@ brew-cask
 clasp
 clisp
 cmake
+crystal-lang
 curl
 docker
 dynamodb-local
@@ -35,6 +36,7 @@ leveldb
 libev
 libevent
 libffi
+libpcl
 libpng
 libsigsegv
 libssh2
@@ -53,6 +55,7 @@ mercurial
 mongodb
 mysql
 mysql55
+node
 nodenv
 objective-caml
 ocaml
