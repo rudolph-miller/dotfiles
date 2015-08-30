@@ -424,3 +424,8 @@
 (add-to-list 'auto-mode-alist '("\\.ml[iylp]?" . tuareg-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Crystal
+
+(add-to-list 'auto-mode-alist '("Projectfile$" . crystal-mode))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

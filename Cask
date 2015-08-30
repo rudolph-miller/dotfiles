@@ -57,3 +57,4 @@
 (depends-on "ruby-block")
 (depends-on "rubocop")
 (depends-on "tuareg")
+(depends-on "crystal-mode" :git "https://github.com/jpellerin/emacs-crystal-mode")
