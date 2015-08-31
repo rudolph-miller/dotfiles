@@ -76,6 +76,8 @@ end
 
 namespace :brew do
   task :setup do
+    sh 'sudo xcodebuild -license'
+    sh 'xcode-select --install'
     sh 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"' unless find_executable 'brew'
     Rake::Task['brew:install'].invoke
   end
