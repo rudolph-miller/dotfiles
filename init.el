@@ -111,11 +111,6 @@
 
 (slime-setup '(slime-repl slime-fancy slime-banner slime-repl-ansi-color slime-indentation))
 
-(setq common-lisp-hyperspec-root
-      (concat "file://" (expand-file-name "~/dev//HyperSpec/"))
-      common-lisp-hyperspec-symbol-table
-      (expand-file-name "~/dev/HyperSpec/Data/Map_Sym.txt"))
-
 (add-hook 'lisp-mode-hook
           (lambda ()
             (slime-mode t)
