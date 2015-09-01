@@ -66,8 +66,8 @@ perl
 perl-build
 phantomjs
 pkg-config
+plenv
 postgresql
-povray
 qt5
 rakudo-star
 rbenv
