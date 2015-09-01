@@ -5,13 +5,13 @@ HOME = ENV['HOME']
 
 task default: :setup
 
-task setup: [:symlink, 'cask:setup', :neobundle, :emacs, :keymaps, :go, :ruby, 'common-lisp', :perl]
+task setup: [:symlink, 'cask:setup', :emacs, :neobundle, :keymaps, :go, :ruby, 'common-lisp', :perl]
 
 task :symlink do
   [
     { from: "#{HOME}/dotfiles/.vimrc", to: "#{HOME}/.vimrc" },
     { from: "#{HOME}/dotfiles/.vim", to: "#{HOME}/.vim" },
-    { from: "#{HOME}/dotfiles/.zshrc", to: "#{HOME}/.zshrc " },
+    { from: "#{HOME}/dotfiles/.zshrc", to: "#{HOME}/.zshrc" },
     { from: "#{HOME}/dotfiles/.zprofile", to: "#{HOME}/.zprofile" },
     { from: "#{HOME}/dotfiles/my-setting.zsh", to: "#{HOME}/.oh-my-zsh/custom/my-setting.zsh" },
     { from: "#{HOME}/dotfiles/swank", to: "#{HOME}/.swank" },
@@ -44,7 +44,7 @@ task emacs: ['emacs:slime', 'emacs:cl-annot', 'emacs:slime-repl-ansi-color', 'em
 
 namespace :emacs do
   task :slime do
-    sh "git clone http://github.com/slime/slime #{HOME}/.emacs.d/slime" unless Dir.exist?("#{HOME}/.cask")
+    sh "git clone http://github.com/slime/slime #{HOME}/.emacs.d/slime" unless Dir.exist?("#{HOME}/.emacs.d/slime")
   end
 
   task 'cl-annot' do
@@ -76,8 +76,6 @@ end
 
 namespace :brew do
   task :setup do
-    sh 'sudo xcodebuild -license'
-    sh 'xcode-select --install'
     sh 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"' unless find_executable 'brew'
     Rake::Task['brew:install'].invoke
   end
@@ -155,12 +153,18 @@ end
 
 task :ruby do
   %w(rubocop bundler).each do |name|
+    sh 'rbenv install 2.2.3' if `which ruby` == '/usr/bin/ruby'
+    sh 'rbenv global 2.2.3'
+    sh 'rbenv rehash'
     sh "gem install #{name}"
   end
 end
 
 task 'common-lisp' do
-  Dir.mkdir("#{HOME}/.config/common-lisp") unless Dir.exist?("#{HOME}/.config/common-lisp")
+  unless Dir.exist?("#{HOME}/.config/common-lisp")
+    Dir.mkdir("#{HOME}/.config")
+    Dir.mkdir("#{HOME}/.config/common-lisp")
+  end
   puts 'cp -rf $HOME/dotfiles/skeleton $HOME/.config/common-lisp/'
   FileUtils.copy_entry("#{HOME}/dotfiles/skeleton", "#{HOME}/.config/common-lisp/skeleton")
 end
