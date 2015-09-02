@@ -3,9 +3,39 @@ require 'mkmf'
 
 HOME = ENV['HOME']
 
+def mac?
+  /darwin/ =~ RUBY_PLATFORM
+end
+
+def exec_with_mac
+  if mac?
+    yield
+  else
+    puts 'RUBY_PLATFORM is not like darwin.'
+  end
+end
+
 task default: :setup
 
-task setup: [:symlink, 'cask:setup', :emacs, :neobundle, :keymaps, :go, :ruby, 'common-lisp', :perl]
+task setup: [:zsh, :mkdir, :symlink, :brew, 'cask:setup', :emacs, :neobundle, :keymaps, :go, :ruby, 'common-lisp', :perl]
+
+task :mkdir do
+  %W(
+    #{HOME}/.emacs.d
+    #{HOME}/.roswell
+  ).each do |dir|
+    Dir.mkdir(dir)
+  end
+end
+
+task :zsh do
+  unless /zsh/ =~ `echo $SHELL`
+    sh 'chsh -s `which zsh`'
+  end
+  unless Dir.exist?("#{HOME}/.oh-my-zsh/")
+    sh 'sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
+  end
+end
 
 task :symlink do
   [
@@ -76,24 +106,32 @@ end
 
 namespace :brew do
   task :setup do
-    sh 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"' unless find_executable 'brew'
-    Rake::Task['brew:install'].invoke
+    exec_with_mac do
+      sh 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"' unless find_executable 'brew'
+      Rake::Task['brew:install'].invoke
+    end
   end
 
   task :install do
-    sh 'cat brewtapfile | xargs -L1 brew tap'
-    sh 'cat brewfile | xargs -L1 brew install'
+    exec_with_mac do
+      sh 'cat brewtapfile | xargs -L1 brew tap'
+      sh 'cat brewfile | xargs -L1 brew install'
+    end
   end
 
   task export: ['brew:export:tap', 'brew:export:library']
 
   namespace :export do
     task :tap do
-      sh "brew tap > #{HOME}/dotfiles/brewtapfile"
+      exec_with_mac do
+        sh "brew tap > #{HOME}/dotfiles/brewtapfile"
+      end
     end
 
     task :library do
-      sh "brew list > #{HOME}/dotfiles/brewfile"
+      exec_with_mac do
+        sh "brew list > #{HOME}/dotfiles/brewfile"
+      end
     end
   end
 end
