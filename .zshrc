@@ -75,7 +75,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 ### Added by the Heroku Toolbelt
 
-export PATH=$HOME/.nodenv/shims:$HOME/.plenv/bin:/usr/local/opt/go/libexec/bin:$HOME/.roswell/bin:$HOME/.linuxbrew/bin:$HOME/.nodebrew/current/bin:$HOME/.cask/bin:$HOME/.rvm/bin:/usr/local/heroku/bin:/usr/local/opt/llvm/bin:/usr/local/bin:/sw/bin:/Users/rudolph/.cask/bin:$PATH
+export PATH=$HOME/.nodenv/shims:$HOME/.plenv/bin:/usr/local/opt/go/libexec/bin:$HOME/.roswell/bin:$HOME/.linuxbrew/bin:$HOME/.nodebrew/current/bin:$HOME/.cask/bin:$HOME/.rvm/bin:/usr/local/heroku/bin:/usr/local/opt/llvm/bin:/usr/local/bin:/sw/bin:/Users/rudolph/.cask/bin:$HOME/Library/Android/sdk/platform-tools:$PATH
 # export LD_LIBRARY_PATH=$HOME/.linuxbrew/lib:/usr/lib:/usr/local/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib:/usr/local/opt/llvm/lib:$LD_LIBRARY_PATH
 export NODE_PATH=/usr/local/lib/node_modules
