@@ -57,7 +57,6 @@ mysql
 mysql55
 node
 nodenv
-objective-caml
 ocaml
 openssl
 packer
@@ -68,6 +67,7 @@ phantomjs
 pkg-config
 plenv
 postgresql
+python
 qt5
 rakudo-star
 rbenv
@@ -81,6 +81,7 @@ scala
 sl
 smlnj
 snappy
+sqlite
 tmux
 typesafe-activator
 unixodbc
