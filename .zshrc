@@ -86,6 +86,15 @@ eval "$(hub alias -s)"
 eval "$(rbenv init -)"
 eval "$(plenv init -)"
 
+DIRSTACKSIZE=100
+setopt AUTO_PUSHD
+
+autoload -Uz compinit && compinit
+
+zstyle ':completion:*' menu select
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
+zstyle ':completion:*:descriptions' format '%BCompleting%b %U%d%u'
+
 # if command -v tmux>/dev/null; then
 #   [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
 # fi
