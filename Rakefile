@@ -54,7 +54,8 @@ task :symlink do
     { from: "#{HOME}/dotfiles/gitignore", to: "#{HOME}/.gitignore" },
     { from: "#{HOME}/dotfiles/.tmux.conf", to: "#{HOME}/.tmux.conf" },
     { from: "#{HOME}/dotfiles/.rubocop.yml", to: "#{HOME}/.rubocop.yml" },
-    { from: "#{HOME}/dotfiles/.gemrc", to: "#{HOME}/.gemrc" }
+    { from: "#{HOME}/dotfiles/.gemrc", to: "#{HOME}/.gemrc" },
+    { from: "#{HOME}/dotfiles/.rspec", to: "#{HOME}/.rspec" }
   ].each do |hash|
     from = hash[:from]
     to = hash[:to]
