@@ -82,6 +82,7 @@ export GOPATH="/usr/local/go/"
 export EDITOR="vim"
 export RUBYMOTION_ANDROID_SDK=$HOME/.rubymotion-android/sdk
 export RUBYMOTION_ANDROID_NDK=$HOME/.rubymotion-android/ndk
+export ANDROID_HOME=/usr/local/opt/android-sdk
 
 eval "$(hub alias -s)"
 eval "$(rbenv init -)"

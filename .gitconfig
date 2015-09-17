@@ -1,0 +1,15 @@
+[user]
+  name = Rudolph-Miller
+  email = chopsticks.tk.ppfm@gmail.com
+[filter "media"]
+  clean = git-media-clean %f
+  sudge = git-media-smudge %f
+[core]
+  editor = /usr/bin/vim
+  user = Rudolph-Miller
+  token = !security find-internet-password -a Rudolph-Miller -s github.com -l 'ghi taken' -w
+	excludesfile = /Users/rudolph/.gitignore
+[pull]
+  rebase = preserve
+[credential]
+	helper = osxkeychain
