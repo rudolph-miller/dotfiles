@@ -51,7 +51,7 @@ task :symlink do
     { from: "#{HOME}/dotfiles/.rosrc", to: "#{HOME}/.rosrc" },
     { from: "#{HOME}/dotfiles/init.lisp", to: "#{HOME}/.roswell/init.lisp" },
     { from: "#{HOME}/dotfiles/.gitconfig", to: "#{HOME}/.gitconfig" },
-    { from: "#{HOME}/dotfiles/.gitignore", to: "#{HOME}/.gitignore" },
+    { from: "#{HOME}/dotfiles/.gitignore_global", to: "#{HOME}/.gitignore_global" },
     { from: "#{HOME}/dotfiles/.tmux.conf", to: "#{HOME}/.tmux.conf" },
     { from: "#{HOME}/dotfiles/.rubocop.yml", to: "#{HOME}/.rubocop.yml" },
     { from: "#{HOME}/dotfiles/.gemrc", to: "#{HOME}/.gemrc" },
