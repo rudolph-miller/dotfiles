@@ -8,7 +8,7 @@
   editor = /usr/bin/vim
   user = Rudolph-Miller
   token = !security find-internet-password -a Rudolph-Miller -s github.com -l 'ghi taken' -w
-	excludesfile = $HOME/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [pull]
   rebase = preserve
 [credential]
