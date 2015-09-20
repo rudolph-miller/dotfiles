@@ -155,6 +155,8 @@ NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'mxw/vim-jsx'
 
 call neobundle#end()
 
@@ -165,3 +167,5 @@ filetype indent on
 let g:syntastic_check_on_open = 1
 let g:syntastic_mode_map = { 'mode': 'passive',
             \ 'active_filetypes': ['ruby'] }
+
+let g:jsx_ext_required = 0
