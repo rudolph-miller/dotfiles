@@ -1,4 +1,5 @@
 acpica
+android-sdk
 autoconf
 automake
 aws-elasticbeanstalk
@@ -29,6 +30,7 @@ hugo
 iftop
 imagemagick
 influxdb
+iojs
 jpeg
 kobito-cli
 leiningen
@@ -56,6 +58,7 @@ mongodb
 mysql
 mysql55
 node
+node-build
 nodenv
 ocaml
 openssl
@@ -85,6 +88,7 @@ sqlite
 tmux
 typesafe-activator
 unixodbc
+watchman
 wget
 wrk
 wxmac
