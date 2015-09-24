@@ -16,5 +16,7 @@ _Store
 *.lib
 *.beam
 *~
+.env
 
 dev_rudolph_miller.yml
+
