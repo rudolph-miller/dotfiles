@@ -57,6 +57,7 @@ mercurial
 mongodb
 mysql
 mysql55
+nginx
 node
 node-build
 nodenv
