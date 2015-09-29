@@ -167,6 +167,7 @@ NeoBundle 'Shougo/vimproc.vim', {
 \    },
 \ }
 NeoBundle 'thinca/vim-unite-history'
+NeoBundle 'tpope/vim-fugitive'
 
 call neobundle#end()
 
