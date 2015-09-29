@@ -2,7 +2,8 @@
 cmd=$1
 shift
 cmd_file=_tasks/$cmd
-env_file=_tasks/.env
+env_file1=.env
+env_file2=_tasks/.env
 exec_cmd=$env'\n'$cmd
 
 if [[ -z "$cmd" ]]; then
@@ -15,12 +16,15 @@ if [[ ! -e $cmd_file ]]; then
   exit -1
 fi
 
-if [[ -e $env_file ]]; then
-  echo "ENV_FILE: $env_file"
-  cat $env_file
-  source $env_file
-  echo '----'
-fi
+for env_file in $env_file1 $env_file2
+do
+  if [[ -e $env_file ]]; then
+    echo "ENV_FILE: $env_file"
+    cat $env_file
+    source $env_file
+    echo '----'
+  fi
+done
 
 echo "EXEC: `cat $cmd_file`"
 eval `cat $cmd_file`
