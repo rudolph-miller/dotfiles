@@ -19,4 +19,5 @@ _Store
 .env
 
 dev_rudolph_miller.yml
-
+bin/
+_tasks

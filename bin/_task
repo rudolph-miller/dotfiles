@@ -1,0 +1,26 @@
+#!/bin/sh
+cmd=$1
+shift
+cmd_file=_tasks/$cmd
+env_file=_tasks/.env
+exec_cmd=$env'\n'$cmd
+
+if [[ -z "$cmd" ]]; then
+  echo "No command specified!"
+  exit -1
+fi
+
+if [[ ! -e $cmd_file ]]; then
+  echo "No such command file: $cmd_file"
+  exit -1
+fi
+
+if [[ -e $env_file ]]; then
+  echo "ENV_FILE: $env_file"
+  cat $env_file
+  source $env_file
+  echo '----'
+fi
+
+echo "EXEC: `cat $cmd_file`"
+eval `cat $cmd_file`
