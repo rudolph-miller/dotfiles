@@ -1,13 +1,29 @@
 #!/bin/sh
 cmd=$1
 shift
-cmd_file=_tasks/$cmd
+TASKS_DIR=_tasks
+cmd_file=$TASKS_DIR/$cmd
 env_file1=.env
-env_file2=_tasks/.env
+env_file2=$TASKS_DIR/.env
 exec_cmd=$env'\n'$cmd
+
+if [[ ! -d "$TASKS_DIR" ]]; then
+  echo "No $TASKS_DIR directory!"
+  exit -1
+fi
+
+if [[ ! "$(ls -A $TASKS_DIR)" ]]; then
+  echo "No commonds registerd!"
+  exit -1
+fi
 
 if [[ -z "$cmd" ]]; then
   echo "No command specified!"
+  echo "REGISTERD COMMANDS:"
+  for file in `ls $TASKS_DIR`;
+  do
+    echo $file
+  done
   exit -1
 fi
 
