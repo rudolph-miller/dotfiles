@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 cmd=$1
 shift
 TASKS_DIR=_tasks
