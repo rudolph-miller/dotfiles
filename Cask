@@ -27,8 +27,6 @@
 (depends-on "slime" :git "https://github.com/slime/slime")
 (depends-on "popwin" :git "https://github.com/m2ym/popwin-el")
 (depends-on "js2-mode" :git "https://github.com/mooz/js2-mode")
-(depends-on "paredit")
-(depends-on "evil-paredit")
 (depends-on "emmet-mode")
 (depends-on "smartparens")
 (depends-on "emacs-async" :git "https://github.com/jwiegley/emacs-async.git")

@@ -156,33 +156,6 @@
 (push '(slime-connection-list-mode) popwin:special-display-config)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Paredit
-
-(loop for mode in '(emacs-lisp-mode
-                     lisp-mode
-                     lisp-interaction-mode
-                     scheme-mode)
-      do (add-hook (intern (concat (symbol-name mode) "-hook"))
-                   (lambda ()
-                     (require 'paredit)
-                     (paredit-mode t)
-                     (evil-paredit-mode t))))
-
-(eval-after-load "paredit"
-                 '(progn
-                    (define-key paredit-mode-map "[" 'paredit-open-bracket)
-                    (define-key paredit-mode-map "]" 'paredit-close-bracket)
-                    (define-key paredit-mode-map "(" 'paredit-open-parenthesis)
-                    (define-key paredit-mode-map ")" 'paredit-close-parenthesis)
-                    (define-key paredit-mode-map "{" 'paredit-open-curly)
-                    (define-key paredit-mode-map "}" 'paredit-close-curly)
-
-                    (global-set-key (kbd "M-l") 'paredit-forward-slurp-sexp)
-                    (global-set-key (kbd "M-h") 'paredit-forward-barf-sexp)
-                    (global-set-key (kbd "M-k") 'paredit-kill)))
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; HTML mode
 
 (add-to-list 'auto-mode-alist
