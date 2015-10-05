@@ -30,7 +30,6 @@ hugo
 iftop
 imagemagick
 influxdb
-iojs
 jpeg
 kobito-cli
 leiningen
@@ -65,6 +64,7 @@ ocaml
 openssl
 packer
 pcre
+peco
 perl
 perl-build
 phantomjs
