@@ -17,7 +17,20 @@ end
 
 task default: :setup
 
-task setup: [:zsh, :mkdir, :symlink, :brew, 'cask:setup', :emacs, :neobundle, :keymaps, :go, :ruby, 'common-lisp', :perl]
+task setup: [
+  :zsh, 
+  :mkdir, 
+  :symlink, 
+  :brew, 
+  'cask:setup', 
+  :emacs, 
+  :neobundle, 
+  :keymaps, 
+  :go, 
+  :ruby, 
+  'common-lisp', 
+  :perl
+]
 
 task :mkdir do
   %W(
