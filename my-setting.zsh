@@ -6,7 +6,7 @@ alias lg="ls -G"
 alias llg="ls -lG"
 alias ghi="TERM=xterm-256color ghi"
 alias em="emacs"
-
+alias be="bundle exec"
 alias pgstart="pg_ctl start -D /usr/local/pg/data"
 
 autoload -U compinit
