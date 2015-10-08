@@ -1,7 +1,14 @@
 #!/bin/sh
+
+TASKS_DIR=_tasks
 cmd=$1
 shift
-TASKS_DIR=_tasks
+
+if [[ -z "$cmd" ]]; then
+  ls $TASKS_DIR | peco | pbcopy
+  cmd=`pbpaste`
+fi
+
 cmd_file=$TASKS_DIR/$cmd
 env_file1=.env
 env_file2=$TASKS_DIR/.env
