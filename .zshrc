@@ -2,7 +2,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="mytheme"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
-export PATH=$HOME/.nodenv/shims:$HOME/.plenv/bin:/usr/local/opt/go/libexec/bin:$HOME/.roswell/bin:$HOME/.linuxbrew/bin:$HOME/.nodebrew/current/bin:$HOME/.cask/bin:$HOME/.rvm/bin:/usr/local/heroku/bin:/usr/local/opt/llvm/bin:/usr/local/bin:/sw/bin:/Users/rudolph/.cask/bin:$HOME/Library/Android/sdk/platform-tools:$HOME/dotfiles/bin:/usr/local/sbin:/usr/local/go/bin:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.nodenv/shims:/usr/local/go/bin:$HOME/.plenv/bin:/usr/local/opt/go/libexec/bin:$HOME/.roswell/bin:$HOME/.linuxbrew/bin:$HOME/.nodebrew/current/bin:$HOME/.cask/bin:$HOME/.rvm/bin:/usr/local/heroku/bin:/usr/local/opt/llvm/bin:/usr/local/bin:/sw/bin:/Users/rudolph/.cask/bin:$HOME/Library/Android/sdk/platform-tools:$HOME/dotfiles/bin:/usr/local/sbin:$HOME/bin:/usr/local/bin:$PATH
 export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib:/usr/local/opt/llvm/lib:$LD_LIBRARY_PATH
 export NODE_PATH=/usr/local/lib/node_modules
 export GOPATH="/usr/local/go/"
