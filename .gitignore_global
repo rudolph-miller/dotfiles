@@ -3,11 +3,9 @@ _Store
 .Spotlight-V100
 .Trashes
 ._*
-.*.swp
-*.swp
-.swp
-.*.swo
-*.swo
+.*.sw[a-z]
+*.sw[a-z]
+.sw[a-z]
 .*.orig
 *.orig
 *~
