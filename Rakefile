@@ -1,4 +1,4 @@
-require 'rspec/core/rake_task'
+# require 'rspec/core/rake_task'
 require 'mkmf'
 
 HOME = ENV['HOME']
@@ -18,11 +18,11 @@ end
 task default: :setup
 
 task setup: [
-  :zsh, 
   :mkdir, 
   :symlink, 
-  :brew, 
-  'cask:setup', 
+  'brew:setup',
+  'cask:setup',
+  :zsh,
   :emacs, 
   :neobundle, 
   :keymaps, 
@@ -45,6 +45,13 @@ end
 
 task :zsh do
   unless /zsh/ =~ `echo $SHELL`
+    exist = false
+    File.open('/etc/shells', 'r') do |file|
+      file.each_line do |line|
+        exist = true if line =~ '/usr/local/bin/zsh'
+      end
+    end
+    sh 'echo "/usr/local/bin/zsh" > sudo tee -a /etc/shells' unless exist
     sh 'chsh -s `which zsh`'
   end
   unless Dir.exist?("#{HOME}/.oh-my-zsh/")
