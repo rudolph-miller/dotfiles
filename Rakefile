@@ -227,8 +227,10 @@ task :ruby do
 end
 
 task 'common-lisp' do
-  unless Dir.exist?("#{HOME}/.config/common-lisp")
+  unless Dir.exist?("#{HOME}/.config")
     Dir.mkdir("#{HOME}/.config")
+  end
+  unless Dir.exist?("#{HOME}/.config/common-lisp")
     Dir.mkdir("#{HOME}/.config/common-lisp")
   end
   puts 'cp -rf $HOME/dotfiles/skeleton $HOME/.config/common-lisp/'
