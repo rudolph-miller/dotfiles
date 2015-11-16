@@ -38,3 +38,10 @@ if exists peco; then
   zle -N peco_select_history
   bindkey '^R' peco_select_history
 fi
+
+function opengem() {
+  gem_name=$(bundle list | sed -e 's/^ *\* *//g' | peco | cut -d \  -f 1)
+  if [ -n "$gem_name" ]; then
+    bundle open ${gem_name}
+  fi
+}
