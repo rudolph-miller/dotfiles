@@ -217,12 +217,13 @@ task :go do
 end
 
 task :ruby do
+  sh 'rbenv install 2.2.3'
+  sh 'rbenv global 2.2.3'
+  sh 'rbenv rehash'
   %w(rubocop bundler).each do |name|
-    sh 'rbenv install 2.2.3'
-    sh 'rbenv global 2.2.3'
-    sh 'rbenv rehash'
     sh "gem install #{name}"
   end
+  sh 'rbenv rehash'
 end
 
 task 'common-lisp' do
