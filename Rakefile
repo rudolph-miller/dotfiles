@@ -141,6 +141,7 @@ namespace :brew do
     exec_with_mac do
       sh 'cat brewtapfile | xargs -L1 brew tap'
       sh 'cat brewfile | xargs -L1 brew install'
+      sh 'cat brewcaskfile | xargs -L1 brew cask install'
     end
   end
 
@@ -156,6 +157,7 @@ namespace :brew do
     task :library do
       exec_with_mac do
         sh "brew list > #{HOME}/dotfiles/brewfile"
+        sh "brew cask list > #{HOME}/dotfiles/brewcaskfile"
       end
     end
   end
@@ -216,7 +218,7 @@ end
 
 task :ruby do
   %w(rubocop bundler).each do |name|
-    sh 'rbenv install 2.2.3' if `which ruby` == '/usr/bin/ruby'
+    sh 'rbenv install 2.2.3'
     sh 'rbenv global 2.2.3'
     sh 'rbenv rehash'
     sh "gem install #{name}"

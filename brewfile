@@ -4,9 +4,11 @@ autoconf
 automake
 aws-elasticbeanstalk
 awscli
+bdw-gc
 boost
 boot2docker
 brew-cask
+cask
 clasp
 clisp
 cmake
@@ -22,6 +24,7 @@ freetype
 gdbm
 ghc
 ghi
+git
 gmp
 go
 h2o
@@ -67,7 +70,6 @@ pcre
 peco
 perl
 perl-build
-phantomjs
 pkg-config
 plenv
 postgresql
@@ -79,6 +81,7 @@ readline
 redis
 rocksdb
 roswell
+ruby
 ruby-build
 rust
 scala
