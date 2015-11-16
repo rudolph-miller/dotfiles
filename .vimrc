@@ -85,22 +85,11 @@ set background=dark
 :highlight PmenuSbar ctermbg=cyan ctermfg=green
 :highlight PmenuThumb ctermbg=white ctermfg=red
 
-" DICTIONARY
-" The dictioanry can pop up a lot of words when you have Auto popup enabled. 
-" You can disable auto popup, by removing the acp.vim from your ~/.vim/plugin/
-" directory and enable the dictionary here - then use <CTRL>X <CTRL>K to bring
-" up the dictionary options. Or just enable it.. :-)
-"set dictionary+=~/system/etc/dict/words
-
 " Make vim popup behave more like an IDE POPUP
 set completeopt=longest,menuone
 
 " Make enter finish the completion popup menu
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-"Auto start NERDTree on startup..
-"autocmd VimEnter * NERDTree
-"autocmd VimEnter * wincmd p
 
 "TAGLIST setup
 nnoremap <F3> :TlistToggle<CR>
@@ -134,29 +123,20 @@ call neobundle#begin(expand('~/.vim/neobundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'vcscommand.vim'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'jelera/vim-javascript-syntax'
-NeoBundle '5t111111/neat-json.vim'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'mxw/vim-jsx'
 NeoBundle 'dgryski/vim-godef'
 NeoBundle 'vim-jp/vim-go-extra'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'https://bitbucket.org/kovisoft/slimv'
-NeoBundle 'mattn/emmet-vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'rust-lang/rust.vim'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'elixir-lang/vim-elixir'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'mxw/vim-jsx'
 NeoBundle 'Shougo/vimproc.vim', {
 \ 'build' : {
 \     'windows' : 'tools\\update-dll-mingw',
