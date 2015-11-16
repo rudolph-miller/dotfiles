@@ -1,4 +1,3 @@
-# require 'rspec/core/rake_task'
 require 'mkmf'
 
 HOME = ENV['HOME']
