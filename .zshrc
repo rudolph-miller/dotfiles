@@ -40,8 +40,19 @@ if exists peco; then
 fi
 
 function opengem() {
-  gem_name=$(bundle list | sed -e 's/^ *\* *//g' | peco | cut -d \  -f 1)
+  local gem_name=$(bundle list | sed -e 's/^ *\* *//g' | peco | cut -d \  -f 1)
   if [ -n "$gem_name" ]; then
     bundle open ${gem_name}
   fi
+}
+
+PR_ID_FILE_NAME='.git_pr_id'
+function pull-request() {
+  local url=$(hub pull-request < `tty` > `tty`)
+  local id=$(echo $url | gsed -e 's/http[|s]:\/\/github\.com\/.*\/.*\/pull\///')
+  local branch=$(git symbolic-ref --short HEAD)
+  touch $PR_ID_FILE_NAME
+  gsed "/^$branch .*$/d" $PR_ID_FILE_NAME
+  echo "$branch $id" > $PR_ID_FILE_NAME
+  echo $url
 }
