@@ -26,6 +26,7 @@ ghc
 ghi
 git
 gmp
+gnu-sed
 go
 h2o
 hub
@@ -70,6 +71,7 @@ pcre
 peco
 perl
 perl-build
+phantomjs
 pkg-config
 plenv
 postgresql
@@ -90,9 +92,12 @@ smlnj
 snappy
 sqlite
 the_silver_searcher
+tig
 tmux
 typesafe-activator
 unixodbc
+v8
+vim
 watchman
 wget
 wrk
