@@ -78,7 +78,8 @@ task :symlink do
     { from: "#{HOME}/dotfiles/.gemrc", to: "#{HOME}/.gemrc" },
     { from: "#{HOME}/dotfiles/.rspec", to: "#{HOME}/.rspec" },
     { from: "#{HOME}/dotfiles/peco_config.json", to: "#{HOME}/.config/peco/config.json" },
-    { from: "#{HOME}/dotfiles/.my.cnf", to: "#{HOME}/.my.cnf" }
+    { from: "#{HOME}/dotfiles/.my.cnf", to: "#{HOME}/.my.cnf" },
+    { from: "#{HOME}/dotfiles/.git_template", to: "#{HOME}/.git_template" }
   ].each do |hash|
     from = hash[:from]
     to = hash[:to]
