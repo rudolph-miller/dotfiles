@@ -44,7 +44,6 @@
 (depends-on "rust-mode")
 (depends-on "flycheck-rust")
 (depends-on "go-mode")
-(depends-on "go-autocomplete")
 (depends-on "go-eldoc")
 (depends-on "markdown-mode")
 (depends-on "livedown" :git "https://github.com/shime/emacs-livedown")
