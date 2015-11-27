@@ -321,13 +321,6 @@
 (global-set-key (kbd "M-m") 'livedown:preview)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Golang
-
-(require 'go-autocomplete)
-(add-hook 'go-mode-hook 'go-eldoc-setup)
-(add-hook 'before-save-hook 'gofmt-before-save)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Elixir
 
 (require 'alchemist)
