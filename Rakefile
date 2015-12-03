@@ -20,7 +20,6 @@ task setup: [
   :mkdir, 
   :symlink, 
   'brew:setup',
-  'cask:setup',
   :zsh,
   :emacs, 
   :neobundle, 
@@ -95,7 +94,7 @@ task :neobundle do
   end
 end
 
-task emacs: ['emacs:slime', 'emacs:cl-annot', 'emacs:slime-repl-ansi-color', 'emacs:js2-mode']
+task emacs: ['cask:setup', 'emacs:slime', 'emacs:cl-annot', 'emacs:slime-repl-ansi-color', 'emacs:js2-mode']
 
 namespace :emacs do
   task :slime do
