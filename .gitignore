@@ -2,3 +2,4 @@
 .vim/.*
 *~
 mkmf.log
+.git_template/.git_template
