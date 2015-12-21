@@ -46,11 +46,6 @@ au BufRead,BufNewFile *.js set filetype=node
 au BufNewFile,BufReadPost *.js setl shiftwidth=2 expandtab
 autocmd FileType node setlocal sw=2 sts=2 ts=2 et
 
-"Cakefile
-au BufRead,BufNewFile Cakefile set filetype=coffee
-au BufNewFile,BufReadPost Cakefile setl shiftwidth=2 expandtab
-autocmd FileType coffee setlocal sw=2 sts=2 ts=2 et
-
 "Go
 au BufRead,BufNewFile *.go set filetype=go
 au BufNewFile,BufReadPost *.go setl shiftwidth=2 expandtab
@@ -69,10 +64,6 @@ autocmd FileType html setlocal sw=2 sts=2 ts=2 et
 au BufRead,BufNewFile *.tmpl set filetype=html
 au BufNewFile,BufReadPost *.tmpl setl shiftwidth=2 expandtab
 autocmd FileType html setlocal sw=2 sts=2 ts=2 et
-
-"Rust
-au BufRead,BufNewFile *.rs set filetype=rust
-au BufRead,BufNewFile *.rust set filetype=rust
 
 "You can change colors easily in vim. 
 "Just type <ESC>:colorscheme and then TAB complete through the options 
@@ -165,8 +156,8 @@ let g:jsx_ext_required = 0
 let g:unite_enable_start_insert = 1
 
 " 大文字小文字を区別しない
-let g:unite_enable_ignore_case = 1
-let g:unite_enable_smart_case = 1
+" let g:unite_enable_ignore_case = 1
+" let g:unite_enable_smart_case = 1
 
 " grep検索
 nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
