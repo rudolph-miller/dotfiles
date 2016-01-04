@@ -40,8 +40,13 @@ if exists peco; then
 fi
 
 function opengem() {
-  gem_name=$(bundle list | sed -e 's/^ *\* *//g' | peco | cut -d \  -f 1)
+  local gem_name=$(bundle list | sed -e 's/^ *\* *//g' | peco | cut -d \  -f 1)
   if [ -n "$gem_name" ]; then
     bundle open ${gem_name}
   fi
+}
+
+function openpr() {
+  local current_branch_name=$(git symbolic-ref --short HEAD | xargs perl -MURI::Escape -e 'print uri_escape($ARGV[0]);')
+  hub browse -- pull/${current_branch_name}
 }
