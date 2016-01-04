@@ -21,3 +21,5 @@
 	templatedir = ~/.git_template
 [rebase]
 	autosquash = true
+[alias]
+	pushf = push --force-with-lease
