@@ -139,6 +139,7 @@ NeoBundle 'Shougo/vimproc.vim', {
 NeoBundle 'thinca/vim-unite-history'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kana/vim-submode'
+NeoBundle 'fatih/vim-go'
 
 call neobundle#end()
 
@@ -204,7 +205,8 @@ nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
-nnoremap sb :<C-u>Unite buffer -buffer-name=file<CR>
+nnoremap ,b :<C-u>Unite buffer -buffer-name=file<CR>
+nnoremap ,f :<C-u>Unite file<CR>
 
 call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
 call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
