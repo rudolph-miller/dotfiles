@@ -24,6 +24,7 @@
 [alias]
 	pushf = push --force-with-lease
   current-branch = rev-parse --abbrev-ref HEAD
-  current-pull=!"git pull --rebase origin `git current-branch`"
+  current-pull = !"git pull --rebase origin `git current-branch`"
+  pull-current = current-pull
   fetch-pulls = fetch origin +refs/pull/*:refs/remotes/pull/*
   pull-dry-run  = !"git fetch origin; B=$(git rev-parse --abbrev-ref HEAD); git diff --stat --summary ${B}..origin/${B}"
