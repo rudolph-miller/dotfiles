@@ -10,6 +10,7 @@ export EDITOR="vim"
 export RUBYMOTION_ANDROID_SDK=$HOME/.rubymotion-android/sdk
 export RUBYMOTION_ANDROID_NDK=$HOME/.rubymotion-android/ndk
 export ANDROID_HOME=/usr/local/opt/android-sdk
+export XDG_CONFIG_HOME=~/.config
 
 eval "$(hub alias -s)"
 eval "$(rbenv init -)"
@@ -50,3 +51,6 @@ function openpr() {
   local current_branch_name=$(git symbolic-ref --short HEAD | xargs perl -MURI::Escape -e 'print uri_escape($ARGV[0]);')
   hub browse -- pull/${current_branch_name}
 }
+
+alias vim=nvim
+alias vi=nvim
