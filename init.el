@@ -377,3 +377,33 @@
 (add-to-list 'auto-mode-alist '("Projectfile$" . crystal-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Remove trailing white spaces
+
+(defvar current-remove-trailing-whitespace-state "")
+
+(defun remove-trailing-whitespaces ()
+  (interactive)
+  (delete-trailing-whitespace)
+  (save-excursion
+    (save-restriction
+      (widen)
+      (goto-char (point-max))
+      (delete-blank-lines))))
+
+(add-hook 'before-save-hook 'remove-trailing-whitespaces)
+
+(setq-default mode-line-format
+              (cons '(:eval current-remove-trailing-whitespace-state) mode-line-format))
+
+(defun toggle-cleanup-spaces ()
+  (interactive)
+  (cond ((memq 'remove-trailing-whitespaces before-save-hook)
+         (setq current-remove-trailing-whitespace-state
+               (propertize "[DT-]" 'face '((:foreground "turquoise1" :weight bold))))
+         (remove-hook 'before-save-hook 'remove-trailing-whitespaces))
+        (t
+          (setq current-remove-trailing-whitespace-state "")
+          (add-hook 'before-save-hook 'remove-trailing-whitespaces)))
+  (force-mode-line-update))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
