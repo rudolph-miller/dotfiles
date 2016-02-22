@@ -62,8 +62,8 @@ task :symlink do
   [
     { from: "#{HOME}/dotfiles/.vimrc", to: "#{HOME}/.vimrc" },
     { from: "#{HOME}/dotfiles/.vim", to: "#{HOME}/.vim" },
-    { from: "#{HOME}/dotfiles/.vimrc", to: "#{HOME}/.config/nvim/init.vim" }
-    { from: "#{HOME}/dotfiles/.vim", to: "#{HOME}/.config/nvim" }
+    { from: "#{HOME}/dotfiles/.vimrc", to: "#{HOME}/.config/nvim/init.vim" },
+    { from: "#{HOME}/dotfiles/.vim", to: "#{HOME}/.config/nvim" },
     { from: "#{HOME}/dotfiles/.zshrc", to: "#{HOME}/.zshrc" },
     { from: "#{HOME}/dotfiles/.zprofile", to: "#{HOME}/.zprofile" },
     { from: "#{HOME}/dotfiles/my-setting.zsh", to: "#{HOME}/.oh-my-zsh/custom/my-setting.zsh" },
