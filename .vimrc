@@ -140,6 +140,7 @@ NeoBundle 'thinca/vim-unite-history'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kana/vim-submode'
 NeoBundle 'fatih/vim-go'
+NeoBundle 'toyamarinyon/vim-swift'
 
 call neobundle#end()
 
