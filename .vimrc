@@ -27,50 +27,50 @@ autocmd FileType haml setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 " CoffeeScript, JavaScript
 autocmd FileType coffee,javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
-"Syntax highlighting
+" Syntax highlighting
 syntax on
 
-"Yes filetype matter
+" Yes filetype matter
 filetype plugin on
 
-"Set a nice Omnifunc - <CTRL>X <CTRL>O
+" Set a nice Omnifunc - <CTRL>X <CTRL>O
 set ofu=syntaxcomplete#Complete
 
-"Coffee script
+" Coffee script
 au BufRead,BufNewFile *.coffee set filetype=coffee
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 autocmd FileType coffee setlocal sw=2 sts=2 ts=2 et
 
-"node
+" node
 au BufRead,BufNewFile *.js set filetype=node
 au BufNewFile,BufReadPost *.js setl shiftwidth=2 expandtab
 autocmd FileType node setlocal sw=2 sts=2 ts=2 et
 
-"Go
+" Go
 au BufRead,BufNewFile *.go set filetype=go
 au BufNewFile,BufReadPost *.go setl shiftwidth=2 expandtab
 autocmd FileType go setlocal sw=2 sts=2 ts=2 et
 
-"Markdown
+" Markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile GHI_ISSUE set filetype=markdown
 
-"HTML
+" HTML
 au BufRead,BufNewFile *.html set filetype=html
 au BufNewFile,BufReadPost *.html setl shiftwidth=2 expandtab
 autocmd FileType html setlocal sw=2 sts=2 ts=2 et
 
-"TMPL
+" TMPL
 au BufRead,BufNewFile *.tmpl set filetype=html
 au BufNewFile,BufReadPost *.tmpl setl shiftwidth=2 expandtab
 autocmd FileType html setlocal sw=2 sts=2 ts=2 et
 
-"You can change colors easily in vim. 
-"Just type <ESC>:colorscheme and then TAB complete through the options 
+" You can change colors easily in vim. 
+" Just type <ESC>:colorscheme and then TAB complete through the options 
 colorscheme desert
 set background=dark
 
-"Set the color for the popup menu
+" Set the color for the popup menu
 :highlight Pmenu ctermbg=blue ctermfg=white
 :highlight PmenuSel ctermbg=blue ctermfg=red
 :highlight PmenuSbar ctermbg=cyan ctermfg=green
@@ -81,26 +81,6 @@ set completeopt=longest,menuone
 
 " Make enter finish the completion popup menu
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-"TAGLIST setup
-nnoremap <F3> :TlistToggle<CR>
-let Tlist_Use_Right_Window = 1
-let Tlist_WinWidth = 50
-
-let g:quickrun_config = {
-      \ "_" : {
-      \ "outputter/buffer/split" : ":botright",
-      \ "outputter/buffer/close_on_empty" : 1
-      \ },
-      \   "cargo" : {
-      \       "command"   : "cargo",
-      \       "exec" : "%c run %s"
-      \   },
-      \ "rust": {
-      \    "type": "cargo"
-      \ }
-      \}
-nnoremap <expr><silent> <C-d> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-d>"
 
 set nocompatible
 filetype off
@@ -119,14 +99,8 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'mxw/vim-jsx'
-NeoBundle 'dgryski/vim-godef'
-NeoBundle 'vim-jp/vim-go-extra'
 NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'kannokanno/previm'
-NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'Shougo/vimproc.vim', {
 \ 'build' : {
 \     'windows' : 'tools\\update-dll-mingw',
@@ -140,6 +114,8 @@ NeoBundle 'thinca/vim-unite-history'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kana/vim-submode'
 NeoBundle 'fatih/vim-go'
+NeoBundle 'dgryski/vim-godef'
+NeoBundle 'vim-jp/vim-go-extra'
 NeoBundle 'toyamarinyon/vim-swift'
 
 call neobundle#end()
@@ -156,10 +132,6 @@ let g:jsx_ext_required = 0
 
 " insert modeで開始
 let g:unite_enable_start_insert = 1
-
-" 大文字小文字を区別しない
-" let g:unite_enable_ignore_case = 1
-" let g:unite_enable_smart_case = 1
 
 " grep検索
 nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
@@ -181,7 +153,6 @@ if executable('ag')
 endif
 
 " aliases
-
 nnoremap s <Nop>
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
