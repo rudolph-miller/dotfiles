@@ -117,6 +117,7 @@ NeoBundle 'fatih/vim-go'
 NeoBundle 'dgryski/vim-godef'
 NeoBundle 'vim-jp/vim-go-extra'
 NeoBundle 'toyamarinyon/vim-swift'
+NeoBundle 'glidenote/memolist.vim'
 
 call neobundle#end()
 
@@ -188,3 +189,6 @@ call submode#map('bufmove', 'n', '', '>', '<C-w>>')
 call submode#map('bufmove', 'n', '', '<', '<C-w><')
 call submode#map('bufmove', 'n', '', '+', '<C-w>+')
 call submode#map('bufmove', 'n', '', '-', '<C-w>-')
+
+" memo
+let g:memolist_memo_suffix = "md"
