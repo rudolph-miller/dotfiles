@@ -99,6 +99,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'mxw/vim-jsx'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/vimproc.vim', {
