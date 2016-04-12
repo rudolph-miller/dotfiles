@@ -1,4 +1,5 @@
 abcl
+ack
 acpica
 android-sdk
 archey
@@ -12,10 +13,10 @@ bdw-gc
 boost
 boot2docker
 brew-cask
+carthage
 cask
 clisp
 cmake
-crystal-lang
 curl
 docker
 dynamodb-local
@@ -38,6 +39,7 @@ gnutls
 go
 h2o
 heroku-toolbelt
+httperf
 hub
 hugo
 iftop
@@ -86,6 +88,7 @@ nodenv
 ocaml
 openssl
 packer
+pandoc
 pcre
 peco
 perl
