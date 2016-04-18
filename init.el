@@ -56,30 +56,6 @@
 (global-set-key "\C-h" 'backward-delete-char)
 (define-key key-translation-map [?\C-h] [?\C-?])
 
-(define-key evil-normal-state-map ")" 'sp-up-sexp)
-(define-key evil-normal-state-map "(" 'sp-down-sexp)
-
-(defun set-pretty-patterns (patterns)
-  (loop for (glyph . pairs) in patterns do
-        (loop for (regexp . major-modes) in pairs do
-              (loop for major-mode in major-modes do
-                    (let ((major-mode (intern (concat (symbol-name major-mode) "-mode")))
-                          (n (if (string-match "\\\\([^?]" regexp) 1 0)))
-                      (font-lock-add-keywords major-mode
-                                              `((,regexp (0 (prog1 ()
-                                                              (compose-region (match-beginning ,n)
-                                                                              (match-end ,n)
-                                                                              ,glyph)))))))))))
-
-;;(set-pretty-patterns
-;; '((?λ ("\\<lambda\\>" lisp lisp-interaction emacs-lisp scheme))
-;;   (?λ ("\\<function\\>" js2))))
-
-;;(add-hook 'slime-mode-hook
-;;          (lambda ()
-;;            (load-library "cl-indent")
-;;            (setq lisp-indent-function 'common-lisp-indent-function)))
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Slime
 
