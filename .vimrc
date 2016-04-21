@@ -193,3 +193,11 @@ call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 
 " memo
 let g:memolist_memo_suffix = "md"
+
+" QuickRun
+let g:quickrun_config = {
+\   "_" : {
+\       "outputter/buffer/split": ":botright",
+\       "outputter/buffer/close_on_empty": 1
+\   }
+\}
