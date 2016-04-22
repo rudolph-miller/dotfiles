@@ -41,11 +41,6 @@ au BufRead,BufNewFile *.coffee set filetype=coffee
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 autocmd FileType coffee setlocal sw=2 sts=2 ts=2 et
 
-" node
-au BufRead,BufNewFile *.js set filetype=node
-au BufNewFile,BufReadPost *.js setl shiftwidth=2 expandtab
-autocmd FileType node setlocal sw=2 sts=2 ts=2 et
-
 " Go
 au BufRead,BufNewFile *.go set filetype=go
 au BufNewFile,BufReadPost *.go setl shiftwidth=2 expandtab
@@ -97,9 +92,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'mxw/vim-jsx'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/vimproc.vim', {
@@ -119,6 +112,7 @@ NeoBundle 'dgryski/vim-godef'
 NeoBundle 'vim-jp/vim-go-extra'
 NeoBundle 'toyamarinyon/vim-swift'
 NeoBundle 'glidenote/memolist.vim'
+NeoBundle 'othree/yajs.vim'
 
 call neobundle#end()
 
@@ -129,8 +123,6 @@ filetype indent on
 let g:syntastic_check_on_open = 1
 let g:syntastic_mode_map = { 'mode': 'passive',
             \ 'active_filetypes': ['ruby'] }
-
-let g:jsx_ext_required = 0
 
 " insert modeで開始
 let g:unite_enable_start_insert = 1
