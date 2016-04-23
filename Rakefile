@@ -69,7 +69,7 @@ task :symlink do
     { from: "#{HOME}/dotfiles/my-setting.zsh", to: "#{HOME}/.oh-my-zsh/custom/my-setting.zsh" },
     { from: "#{HOME}/dotfiles/init.el", to: "#{HOME}/.emacs.d/init.el" },
     { from: "#{HOME}/dotfiles/Cask", to: "#{HOME}/.emacs.d/Cask" },
-    { from: "#{HOME}/dotfiles/.jshintrc", to: "#{HOME}/.emacs.d/.jshintrc" },
+    { from: "#{HOME}/dotfiles/.jshintrc", to: "#{HOME}/.jshintrc" },
     { from: "#{HOME}/dotfiles/mytheme.zsh-theme", to: "#{HOME}/.oh-my-zsh/themes/mytheme.zsh-theme" },
     { from: "#{HOME}/dotfiles/.rosrc", to: "#{HOME}/.rosrc" },
     { from: "#{HOME}/dotfiles/init.lisp", to: "#{HOME}/.roswell/init.lisp" },

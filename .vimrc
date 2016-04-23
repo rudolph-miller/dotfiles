@@ -122,7 +122,7 @@ filetype indent on
 
 let g:syntastic_check_on_open = 1
 let g:syntastic_mode_map = { 'mode': 'passive',
-            \ 'active_filetypes': ['ruby'] }
+            \ 'active_filetypes': ['ruby', 'javascript'] }
 
 " insert modeで開始
 let g:unite_enable_start_insert = 1
