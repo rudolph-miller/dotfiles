@@ -15,18 +15,6 @@ set wrap
 set hidden
 set backspace=indent,eol,start
 
-" Ruby
-autocmd FileType ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-" YAML
-autocmd FileType yaml setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-" ERUBY
-autocmd FileType eruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-" HAML
-autocmd FileType haml setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-
-" CoffeeScript, JavaScript
-autocmd FileType coffee,javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-
 " Syntax highlighting
 syntax on
 
@@ -36,29 +24,9 @@ filetype plugin on
 " Set a nice Omnifunc - <CTRL>X <CTRL>O
 set ofu=syntaxcomplete#Complete
 
-" Coffee script
-au BufRead,BufNewFile *.coffee set filetype=coffee
-au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
-autocmd FileType coffee setlocal sw=2 sts=2 ts=2 et
-
-" Go
-au BufRead,BufNewFile *.go set filetype=go
-au BufNewFile,BufReadPost *.go setl shiftwidth=2 expandtab
-autocmd FileType go setlocal sw=2 sts=2 ts=2 et
-
 " Markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile GHI_ISSUE set filetype=markdown
-
-" HTML
-au BufRead,BufNewFile *.html set filetype=html
-au BufNewFile,BufReadPost *.html setl shiftwidth=2 expandtab
-autocmd FileType html setlocal sw=2 sts=2 ts=2 et
-
-" TMPL
-au BufRead,BufNewFile *.tmpl set filetype=html
-au BufNewFile,BufReadPost *.tmpl setl shiftwidth=2 expandtab
-autocmd FileType html setlocal sw=2 sts=2 ts=2 et
 
 " You can change colors easily in vim. 
 " Just type <ESC>:colorscheme and then TAB complete through the options 
@@ -96,14 +64,14 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/vimproc.vim', {
-\ 'build' : {
-\     'windows' : 'tools\\update-dll-mingw',
-\     'cygwin' : 'make -f make_cygwin.mak',
-\     'mac' : 'make -f make_mac.mak',
-\     'linux' : 'make',
-\     'unix' : 'gmake',
-\    },
-\ }
+      \ 'build' : {
+      \     'windows' : 'tools\\update-dll-mingw',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'linux' : 'make',
+      \     'unix' : 'gmake',
+      \    },
+      \ }
 NeoBundle 'thinca/vim-unite-history'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kana/vim-submode'
@@ -122,7 +90,7 @@ filetype indent on
 
 let g:syntastic_check_on_open = 1
 let g:syntastic_mode_map = { 'mode': 'passive',
-            \ 'active_filetypes': ['ruby', 'javascript'] }
+      \ 'active_filetypes': ['ruby', 'javascript'] }
 
 " insert modeで開始
 let g:unite_enable_start_insert = 1
@@ -188,8 +156,8 @@ let g:memolist_memo_suffix = "md"
 
 " QuickRun
 let g:quickrun_config = {
-\   "_" : {
-\       "outputter/buffer/split": ":botright",
-\       "outputter/buffer/close_on_empty": 1
-\   }
-\}
+      \   "_" : {
+      \       "outputter/buffer/split": ":botright",
+      \       "outputter/buffer/close_on_empty": 1
+      \   }
+      \}
