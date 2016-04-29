@@ -81,6 +81,8 @@ NeoBundle 'vim-jp/vim-go-extra'
 NeoBundle 'toyamarinyon/vim-swift'
 NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'othree/yajs.vim'
+NeoBundle 'kana/vim-operator-user'
+NeoBundle 'rhysd/vim-clang-format'
 
 call neobundle#end()
 
@@ -161,3 +163,5 @@ let g:quickrun_config = {
       \       "outputter/buffer/close_on_empty": 1
       \   }
       \}
+
+autocmd FileType c ClangFormatAutoEnable
