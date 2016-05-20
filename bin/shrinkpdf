@@ -1,0 +1,56 @@
+#! /bin/bash
+
+if [ $# -lt 1 ] || [ $# -gt 2 ]; then
+  echo usage: shrinkpdf \<filename\> \[\<output\>\]
+  exit
+fi
+
+if [ ! -e "$1" ]; then
+  echo "$1" does not exist. Exiting.
+  exit
+fi
+
+if [ $# = 3 ]; then
+  NEWNAME=$2
+else
+  NEWNAME=`basename $1 .pdf`_shrinked.pdf
+fi
+
+if [ "$1 " = "$NEWNAME " ]; then
+  echo Input and output are identical. Won\'t overwrite---exiting.
+  exit
+fi
+
+if [ -e "$NEWNAME" ]; then
+  echo "$NEWNAME" exists. Delete? \(y/n\)
+  read ANS
+  if [ "$ANS " = "y " ]; then
+    rm "$NEWNAME"
+  else
+    exit
+  fi
+fi
+
+gs -q -dNOPAUSE -dBATCH -dSAFER \
+  -sDEVICE=pdfwrite \
+  -dCompatibilityLevel=1.3 \
+  -dPDFSETTINGS=/screen \
+  -dEmbedAllFonts=true \
+  -dSubsetFonts=true \
+  -dColorImageDownsampleType=/Bicubic \
+  -dColorImageResolution=300 \
+  -dGrayImageDownsampleType=/Bicubic \
+  -dGrayImageResolution=300 \
+  -dMonoImageDownsampleType=/Bicubic \
+  -dMonoImageResolution=300 \
+  -sOutputFile="$NEWNAME" \
+  "$1"
+
+get_size() {
+  b=$(wc -c "$1" | sed -e 's/^ *//g' | cut -d ' ' -f 1)
+  b=$((b / 1024))
+  echo $b
+}
+
+echo $1: $(get_size $1) KB
+echo $NEWNAME: $(get_size $NEWNAME) KB
