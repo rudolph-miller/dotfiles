@@ -83,6 +83,7 @@ NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'othree/yajs.vim'
 NeoBundle 'kana/vim-operator-user'
 NeoBundle 'rhysd/vim-clang-format'
+NeoBundle 'cypok/vim-sml'
 
 call neobundle#end()
 
