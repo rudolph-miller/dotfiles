@@ -32,6 +32,7 @@ gdbm
 gettext
 ghc
 ghi
+ghostscript
 git
 gmp
 gnu-sed
@@ -67,6 +68,7 @@ libuv
 libxml2
 libxslt
 libyaml
+little-cms2
 llvm
 llvm35
 lz4
@@ -87,6 +89,7 @@ node-build
 nodenv
 ocaml
 openssl
+optipng
 packer
 pandoc
 pcre
