@@ -53,3 +53,5 @@ function openpr() {
 }
 
 alias vi=nvim
+alias ghc='stack ghc --'
+alias ghci='stack ghci'
