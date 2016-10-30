@@ -1,6 +1,6 @@
 [user]
   name = Rudolph-Miller
-  email = chopsticks.tk.ppfm@gmail.com
+  email = me@rudolph-miller.com
 [filter "media"]
   clean = git-media-clean %f
   sudge = git-media-smudge %f

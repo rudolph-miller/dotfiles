@@ -2,8 +2,10 @@ abcl
 ack
 acpica
 android-sdk
+app-engine-go-64
 archey
 aspell
+augeas
 autoconf
 automake
 aws-elasticbeanstalk
@@ -12,12 +14,12 @@ bazel
 bdw-gc
 boost
 boot2docker
-brew-cask
 carthage
 cask
 clisp
 cmake
 curl
+dialog
 docker
 dynamodb-local
 ecl
@@ -38,7 +40,10 @@ gmp
 gnu-sed
 gnutls
 go
+gradle
 h2o
+haskell-stack
+heroku
 heroku-toolbelt
 httperf
 hub
@@ -48,6 +53,7 @@ imagemagick
 influxdb
 isl
 jpeg
+jq
 kobito-cli
 leiningen
 leveldb
@@ -79,6 +85,8 @@ mercurial
 mongodb
 mpfr
 mysql55
+mysql56
+nasm
 ncurses
 neovim
 netcat
@@ -88,6 +96,7 @@ node
 node-build
 nodenv
 ocaml
+oniguruma
 openssl
 optipng
 packer
@@ -132,4 +141,5 @@ wget
 wrk
 wxmac
 xz
+yarn
 zsh
