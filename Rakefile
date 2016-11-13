@@ -71,7 +71,6 @@ task :symlink do
     { from: "#{HOME}/dotfiles/Cask", to: "#{HOME}/.emacs.d/Cask" },
     { from: "#{HOME}/dotfiles/.jshintrc", to: "#{HOME}/.jshintrc" },
     { from: "#{HOME}/dotfiles/mytheme.zsh-theme", to: "#{HOME}/.oh-my-zsh/themes/mytheme.zsh-theme" },
-    { from: "#{HOME}/dotfiles/.rosrc", to: "#{HOME}/.rosrc" },
     { from: "#{HOME}/dotfiles/init.lisp", to: "#{HOME}/.roswell/init.lisp" },
     { from: "#{HOME}/dotfiles/.gitconfig", to: "#{HOME}/.gitconfig" },
     { from: "#{HOME}/dotfiles/.gitignore_global", to: "#{HOME}/.gitignore_global" },
@@ -219,8 +218,8 @@ task :go do
 end
 
 task :ruby do
-  sh 'rbenv install 2.2.3'
-  sh 'rbenv global 2.2.3'
+  sh 'rbenv install 2.3.1'
+  sh 'rbenv global 2.3.1'
   sh 'rbenv rehash'
   %w(rubocop bundler).each do |name|
     sh "gem install #{name}"

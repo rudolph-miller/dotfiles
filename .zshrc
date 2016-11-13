@@ -52,6 +52,6 @@ function openpr() {
   hub browse -- pull/${current_branch_name}
 }
 
-alias vi=nvim
+alias vi=vim
 alias ghc='stack ghc --'
 alias ghci='stack ghci'

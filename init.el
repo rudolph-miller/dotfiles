@@ -65,7 +65,7 @@
 
 (require 'slime-annot)
 
-(setq inferior-lisp-program "ros run -Q -s")
+(setq inferior-lisp-program "ros run")
 ;; (setq inferior-lisp-program "ccl")
 ;; (setq inferior-lisp-program "clisp")
 

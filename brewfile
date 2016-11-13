@@ -54,7 +54,6 @@ influxdb
 isl
 jpeg
 jq
-kobito-cli
 leiningen
 leveldb
 libev
@@ -75,8 +74,6 @@ libxml2
 libxslt
 libyaml
 little-cms2
-llvm
-llvm35
 lz4
 m4
 make
@@ -88,7 +85,6 @@ mysql55
 mysql56
 nasm
 ncurses
-neovim
 netcat
 nettle
 nginx
