@@ -218,8 +218,8 @@ task :go do
 end
 
 task :ruby do
-  sh 'rbenv install 2.3.1'
-  sh 'rbenv global 2.3.1'
+  sh 'rbenv install 2.3.2'
+  sh 'rbenv global 2.3.2'
   sh 'rbenv rehash'
   %w(rubocop bundler).each do |name|
     sh "gem install #{name}"
