@@ -55,3 +55,13 @@ function openpr() {
 alias vi=vim
 alias ghc='stack ghc --'
 alias ghci='stack ghci'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f /Users/rudolph/google-cloud-sdk/path.zsh.inc ]; then
+  source '/Users/rudolph/google-cloud-sdk/path.zsh.inc'
+fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f /Users/rudolph/google-cloud-sdk/completion.zsh.inc ]; then
+  source '/Users/rudolph/google-cloud-sdk/completion.zsh.inc'
+fi
