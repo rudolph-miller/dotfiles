@@ -28,6 +28,9 @@ set ofu=syntaxcomplete#Complete
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile GHI_ISSUE set filetype=markdown
 
+" JavaScript
+au BufRead,BufNewFile *.jsx set filetype=javascript.jsx
+
 " You can change colors easily in vim. 
 " Just type <ESC>:colorscheme and then TAB complete through the options 
 colorscheme desert
@@ -81,10 +84,11 @@ NeoBundle 'dgryski/vim-godef'
 NeoBundle 'vim-jp/vim-go-extra'
 NeoBundle 'toyamarinyon/vim-swift'
 NeoBundle 'glidenote/memolist.vim'
-NeoBundle 'othree/yajs.vim'
 NeoBundle 'kana/vim-operator-user'
 NeoBundle 'rhysd/vim-clang-format'
 NeoBundle 'cypok/vim-sml'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'mxw/vim-jsx'
 
 call neobundle#end()
 
@@ -168,3 +172,5 @@ let g:quickrun_config = {
       \}
 
 autocmd FileType c ClangFormatAutoEnable
+
+let g:jsx_ext_required = 0
