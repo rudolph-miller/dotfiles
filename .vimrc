@@ -89,6 +89,7 @@ NeoBundle 'rhysd/vim-clang-format'
 NeoBundle 'cypok/vim-sml'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
+NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 
 call neobundle#end()
 
@@ -174,3 +175,8 @@ let g:quickrun_config = {
 autocmd FileType c ClangFormatAutoEnable
 
 let g:jsx_ext_required = 0
+
+" Common Lisp
+
+let g:slimv_lisp = 'ros run'
+let g:silmv_impl = 'sbcl'
