@@ -31,6 +31,17 @@ au BufRead,BufNewFile GHI_ISSUE set filetype=markdown
 " JavaScript
 au BufRead,BufNewFile *.jsx set filetype=javascript.jsx
 
+" Common Lisp
+au BufRead,BufNewFile *.asd set filetype=lisp
+au BufRead,BufNewFile *.ros set filetype=lisp
+
+" ECT
+au BufRead,BufNewFile *.ect set filetype=html
+
+" PHP
+au BufRead,BufNewFile *.php setfiletype php
+
+
 " You can change colors easily in vim. 
 " Just type <ESC>:colorscheme and then TAB complete through the options 
 colorscheme desert
@@ -89,7 +100,8 @@ NeoBundle 'rhysd/vim-clang-format'
 NeoBundle 'cypok/vim-sml'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
-NeoBundle 'https://bitbucket.org/kovisoft/slimv'
+NeoBundle 'https://github.com/kovisoft/slimv'
+NeoBundle 'leafgarland/typescript-vim'
 
 call neobundle#end()
 
@@ -180,3 +192,15 @@ let g:jsx_ext_required = 0
 
 let g:slimv_lisp = 'ros run'
 let g:silmv_impl = 'sbcl'
+nnoremap <silent> ,cl :VimShellInteractive ros -s swank -e '(swank:create-server :port 4005 :dont-close t)' wait<CR>
+let g:paredit_disable_lisp = 1
+let g:paredit_electric_return = 0
+
+" ESC
+
+imap <C-e> <ESC>
+vmap <C-e> <ESC>
+cmap <C-e> <C-c>
+imap <C-k> <ESC>
+vmap <C-k> <ESC>
+cmap <C-k> <C-c>
