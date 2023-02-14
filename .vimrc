@@ -44,7 +44,8 @@ au BufRead,BufNewFile *.php setfiletype php
 
 " You can change colors easily in vim. 
 " Just type <ESC>:colorscheme and then TAB complete through the options 
-colorscheme desert
+" # colorscheme desert
+colorscheme default
 set background=dark
 
 " Set the color for the popup menu
@@ -73,7 +74,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'scrooloose/syntastic'
+" NeoBundle 'scrooloose/syntastic'
 NeoBundle 'pmsorhaindo/syntastic-local-eslint.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'plasticboy/vim-markdown'
@@ -102,6 +103,10 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'https://github.com/kovisoft/slimv'
 NeoBundle 'leafgarland/typescript-vim'
+NeoBundle 'posva/vim-vue'
+NeoBundleLazy 'udalov/kotlin-vim', {
+    \ 'autoload' : {'filetypes' : 'kotlin'}
+    \ }
 
 call neobundle#end()
 
@@ -135,6 +140,9 @@ if executable('ag')
         \ '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
   let g:unite_source_grep_recursive_opt = ''
 endif
+
+" Use goimports
+let g:go_fmt_command = "goimports"
 
 " aliases
 nnoremap s <Nop>

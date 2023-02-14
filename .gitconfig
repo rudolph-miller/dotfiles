@@ -10,7 +10,7 @@
   token = !security find-internet-password -a Rudolph-Miller -s github.com -l 'ghi taken' -w
 	excludesfile = ~/.gitignore_global
 [pull]
-  rebase = preserve
+  rebase = merges
 [credential]
 	helper = osxkeychain
 [push]

@@ -3,7 +3,7 @@ ZSH_THEME="mytheme"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 export PYENV_ROOT="${HOME}/.pyenv"
-export PATH=$PYENV_ROOT/shims:$PYENV_ROOT/bin:$HOME/.nodenv/shims:/usr/local/go/bin:$HOME/.plenv/bin:/usr/local/opt/go/libexec/bin:$HOME/.roswell/bin:$HOME/.linuxbrew/bin:$HOME/.nodebrew/current/bin:$HOME/.cask/bin:$HOME/.rvm/bin:/usr/local/heroku/bin:/usr/local/opt/llvm/bin:/usr/local/bin:/sw/bin:/Users/rudolph/.cask/bin:$HOME/Library/Android/sdk/platform-tools:$HOME/dotfiles/bin:/usr/local/sbin:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/projects/ubie/eng-tools:/usr/local/opt/openssl@1.1/bin:$HOME/.embulk/bin:$PYENV_ROOT/shims:$PYENV_ROOT/bin:$HOME/.nodenv/shims:/usr/local/go/bin:$HOME/.plenv/bin:/usr/local/opt/go/libexec/bin:$HOME/.roswell/bin:$HOME/.linuxbrew/bin:$HOME/.nodebrew/current/bin:$HOME/.cask/bin:$HOME/.rvm/bin:/usr/local/heroku/bin:/usr/local/opt/llvm/bin:/usr/local/bin:/sw/bin:/Users/rudolph/.cask/bin:$HOME/Library/Android/sdk/platform-tools:$HOME/dotfiles/bin:/usr/local/sbin:$HOME/bin:/usr/local/bin:$HOME/.pyenv/versions/2.7.6/bin:$PATH
 export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib:/usr/local/opt/llvm/lib:$LD_LIBRARY_PATH
 export NODE_PATH=/usr/local/lib/node_modules
 export GOPATH="/usr/local/go/"
@@ -17,6 +17,9 @@ export CUDA_HOME=/usr/local/cuda
 export DYLD_LIBRARY_PATH=$CUDA_HOME/lib:$DYLD_LIBRARY_PATH
 export PATH="$CUDA_HOME/bin:$PATH"
 export PGDATA=/usr/local/var/postgres
+export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
+PATH=${JAVA_HOME}/bin:${PATH}
 
 eval "$(hub alias -s)"
 eval "$(rbenv init -)"
@@ -34,6 +37,7 @@ zstyle ':completion:*:cd:*' ignore-parents parent pwd
 zstyle ':completion:*:descriptions' format '%BCompleting%b %U%d%u'
 
 function exists { which $1 &> /dev/null }
+
 
 if exists peco; then
   function peco_select_history() {
@@ -64,14 +68,10 @@ alias vi=vim
 alias ghc='stack ghc --'
 alias ghci='stack ghci'
 
+export PATH="$HOME/.yarn/bin:$PATH"
+
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f /Users/rudolph/google-cloud-sdk/path.zsh.inc ]; then
-  source '/Users/rudolph/google-cloud-sdk/path.zsh.inc'
-fi
+if [ -f '/Users/rudolph/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/rudolph/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f /Users/rudolph/google-cloud-sdk/completion.zsh.inc ]; then
-  source '/Users/rudolph/google-cloud-sdk/completion.zsh.inc'
-fi
-
-export PATH="$HOME/.yarn/bin:$PATH"
+if [ -f '/Users/rudolph/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/rudolph/google-cloud-sdk/completion.zsh.inc'; fi
