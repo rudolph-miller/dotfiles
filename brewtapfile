@@ -1,5 +1,5 @@
-caskroom/cask
-homebrew/core
-homebrew/dupes
-homebrew/versions
-jawshooah/nodenv
+dbt-labs/dbt
+hashicorp/tap
+heroku/brew
+shopify/shopify
+universal-ctags/universal-ctags

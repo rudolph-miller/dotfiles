@@ -142,7 +142,7 @@ namespace :brew do
     exec_with_mac do
       sh 'cat brewtapfile | xargs -L1 brew tap'
       sh 'cat brewfile | xargs -L1 brew install'
-      sh 'cat brewcaskfile | xargs -L1 brew cask install'
+      sh 'cat brewcaskfile | xargs -L1 brew install --cask'
     end
   end
 
@@ -158,7 +158,7 @@ namespace :brew do
     task :library do
       exec_with_mac do
         sh "brew list > #{HOME}/dotfiles/brewfile"
-        sh "brew cask list > #{HOME}/dotfiles/brewcaskfile"
+        sh "brew list --cask > #{HOME}/dotfiles/brewcaskfile"
       end
     end
   end
