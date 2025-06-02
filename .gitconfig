@@ -1,6 +1,6 @@
 [user]
-  name = Rudolph-Miller
-  email = me@rudolph-miller.com
+	name = Tomoya Kawanishi
+	email = me@rudolph-miller.com
 [filter "media"]
   clean = git-media-clean %f
   sudge = git-media-smudge %f
@@ -17,8 +17,11 @@
 	default = current
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
 [init]
 	templatedir = ~/.git_template
+	defaultBranch = main
 [rebase]
 	autosquash = true
 [alias]

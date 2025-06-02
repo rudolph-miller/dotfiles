@@ -41,6 +41,9 @@ au BufRead,BufNewFile *.ect set filetype=html
 " PHP
 au BufRead,BufNewFile *.php setfiletype php
 
+" TSX
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+
 
 " You can change colors easily in vim. 
 " Just type <ESC>:colorscheme and then TAB complete through the options 
@@ -103,10 +106,17 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'https://github.com/kovisoft/slimv'
 NeoBundle 'leafgarland/typescript-vim'
+NeoBundle 'peitalin/vim-jsx-typescript'
 NeoBundle 'posva/vim-vue'
 NeoBundleLazy 'udalov/kotlin-vim', {
     \ 'autoload' : {'filetypes' : 'kotlin'}
     \ }
+NeoBundle 'uarun/vim-protobuf'
+NeoBundle 'soramugi/auto-ctags.vim'
+NeoBundle 'prabirshrestha/vim-lsp'
+NeoBundle 'mattn/vim-lsp-settings'
+NeoBundle 'dart-lang/dart-vim-plugin'
+NeoBundle 'thosakwe/vim-flutter'
 
 call neobundle#end()
 
@@ -212,3 +222,13 @@ cmap <C-e> <C-c>
 imap <C-k> <ESC>
 vmap <C-k> <ESC>
 cmap <C-k> <C-c>
+
+" LSP
+" let g:auto_ctags = 1
+" let g:auto_ctags_directory_list = ['.git', '.svn']
+" let g:auto_ctags_tags_name = '.tags'
+" let g:auto_ctags_warn_once = 1
+" set tags=.git/.tags
+nnoremap <C-h> :tab LspDefinition<CR>
+nnoremap <C-d> <C-w><C-]><C-w>T
+let g:lsp_diagnostics_enabled = 0 
